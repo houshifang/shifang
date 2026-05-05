@@ -155,20 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const images = [
-    "./assets/trail-01.jpg",
-    "./assets/trail-02.jpg",
-    "./assets/trail-03.jpg",
-    "./assets/trail-04.jpg",
-    "./assets/trail-05.jpg",
-    "./assets/trail-06.jpg",
-    "./assets/trail-07.jpg",
-    "./assets/trail-08.jpg",
-    "./assets/trail-09.jpg",
-    "./assets/trail-10.jpg",
-    "./assets/trail-11.jpg",
-    "./assets/trail-12.jpg",
-    "./assets/trail-13.jpg",
-    "./assets/trail-14.jpg",
+    "./assets/trail-01.webp",
+    "./assets/trail-02.webp",
+    "./assets/trail-03.webp",
+    "./assets/trail-04.webp",
+    "./assets/trail-05.webp",
+    "./assets/trail-06.webp",
+    "./assets/trail-07.webp",
+    "./assets/trail-08.webp",
+    "./assets/trail-09.webp",
+    "./assets/trail-10.webp",
+    "./assets/trail-11.webp",
+    "./assets/trail-12.webp",
+    "./assets/trail-13.webp",
+    "./assets/trail-14.webp",
   ];
 
   let imageIndex = 0;

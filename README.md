@@ -34,8 +34,8 @@
 └── assets/
     ├── ico.png             # favicon
     ├── cursor-pointer.svg  # 自定义光标
-    ├── wechat-qr.jpg       # 微信二维码
-    ├── trail-01~14.jpg     # 首页拖尾动画图
+    ├── wechat-qr.webp      # 微信二维码
+    ├── trail-01~14.webp    # 首页拖尾动画图
     └── projects/
         ├── *.webp          # 项目封面
         └── dakafeng/
