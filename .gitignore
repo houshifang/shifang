@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+# 日志 / 临时文件
+*.log
+*.tmp
+*.bak
+.cache/
+
+# Python（compress-images.py 相关）
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.python-version
+
+# 系统截图临时文件
+Clipboard*.png
+image.png
+image*.png
+*.tmp.*
+
+# 资源源文件（如果以后引入构建步骤）
+node_modules/
+dist/
+build/
