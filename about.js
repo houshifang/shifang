@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const initRevealOnScroll = () => {
     const targets = document.querySelectorAll(
-      ".about-stats, .about-section, .about-contact"
+      ".about-section, .about-contact"
     );
     if (!targets.length) return;
 

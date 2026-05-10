@@ -836,45 +836,6 @@ html.is-lightbox-open body {
   font-style: normal;
 }
 
-/* Stats 数据条 */
-.about-stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
-  padding: 3rem 0;
-  margin-bottom: 6rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.about-stat-num {
-  display: flex;
-  align-items: baseline;
-  color: #ffffff;
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1;
-}
-
-.about-stat-unit {
-  margin-left: 0.25rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.about-stat-label {
-  margin-top: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
 /* 统一区块 */
 .about-section {
   margin-bottom: 6rem;
@@ -1201,14 +1162,12 @@ html.is-lightbox-open body {
 }
 
 /* 进入动画的初始/激活态 */
-.about-stats,
 .about-section,
 .about-contact {
   opacity: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .about-stats,
   .about-section,
   .about-contact {
     opacity: 0;
@@ -1217,7 +1176,6 @@ html.is-lightbox-open body {
       opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .about-stats.is-visible,
   .about-section.is-visible,
   .about-contact.is-visible {
     opacity: 1;
@@ -1235,12 +1193,6 @@ html.is-lightbox-open body {
   .about-intro-text {
     font-size: 0.92rem;
     line-height: 1.78;
-  }
-  .about-stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem 1rem;
-    padding: 2.25rem 0;
-    margin-bottom: 4rem;
   }
   .about-section {
     margin-bottom: 4rem;
