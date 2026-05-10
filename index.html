@@ -18,6 +18,25 @@
   <title>仕方 — UX & AI Product Designer</title>
   <link rel="icon" type="image/png" href="./assets/ico.png">
   <link rel="stylesheet" href="style.css">
+
+  <!-- 提前与 CDN 建立连接，缩短 GSAP / Lenis 首次请求耗时 -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Hero 拖尾图：HTML 解析阶段即开始下载，避免首次 hover 时才发起请求 -->
+  <link rel="preload" as="image" href="./assets/trail-01.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/trail-02.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/trail-03.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./assets/trail-04.webp">
+  <link rel="preload" as="image" href="./assets/trail-05.webp">
+  <link rel="preload" as="image" href="./assets/trail-06.webp">
+  <link rel="preload" as="image" href="./assets/trail-07.webp">
+  <link rel="preload" as="image" href="./assets/trail-08.webp">
+  <link rel="preload" as="image" href="./assets/trail-09.webp">
+  <link rel="preload" as="image" href="./assets/trail-10.webp">
+  <link rel="preload" as="image" href="./assets/trail-11.webp">
+  <link rel="preload" as="image" href="./assets/trail-12.webp">
+  <link rel="preload" as="image" href="./assets/trail-13.webp">
+  <link rel="preload" as="image" href="./assets/trail-14.webp">
 </head>
 <body>
   <div class="container">

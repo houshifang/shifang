@@ -171,20 +171,15 @@ document.addEventListener("DOMContentLoaded", () => {
     "./assets/trail-14.webp",
   ];
 
-  // 触屏设备根本不会触发拖尾，避免浪费用户流量
+  // 拖尾图主要靠 index.html 里的 <link rel="preload"> 在 HTML 解析阶段就开始下载；
+  // 这里再用 JS 触发一次，作为兜底（万一缓存被清空 / preload 被忽略），
+  // 此时大概率命中浏览器缓存，几乎无网络成本。
   if (window.matchMedia("(pointer: fine)").matches) {
-    const preloadTrailImages = () => {
-      images.forEach((src) => {
-        const img = new Image();
-        img.decoding = "async";
-        img.src = src;
-      });
-    };
-
-    const idle =
-      window.requestIdleCallback ||
-      ((cb) => setTimeout(cb, 200));
-    idle(preloadTrailImages, { timeout: 1500 });
+    images.forEach((src) => {
+      const img = new Image();
+      img.decoding = "async";
+      img.src = src;
+    });
   }
 
   let imageIndex = 0;
