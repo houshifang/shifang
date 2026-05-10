@@ -171,6 +171,22 @@ document.addEventListener("DOMContentLoaded", () => {
     "./assets/trail-14.webp",
   ];
 
+  // 触屏设备根本不会触发拖尾，避免浪费用户流量
+  if (window.matchMedia("(pointer: fine)").matches) {
+    const preloadTrailImages = () => {
+      images.forEach((src) => {
+        const img = new Image();
+        img.decoding = "async";
+        img.src = src;
+      });
+    };
+
+    const idle =
+      window.requestIdleCallback ||
+      ((cb) => setTimeout(cb, 200));
+    idle(preloadTrailImages, { timeout: 1500 });
+  }
+
   let imageIndex = 0;
   let lastX = 0;
   let lastY = 0;
