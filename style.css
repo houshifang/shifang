@@ -371,13 +371,28 @@ body {
   }
   .header {
     padding: 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 1rem;
   }
   .header.is-scrolled {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
   }
+  .header-logo,
+  .header-right {
+    flex: initial;
+  }
   .nav {
-    display: none; /* Hide nav on mobile to keep it clean, or could change layout */
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    min-width: 0;
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+  }
+  .header-right {
+    gap: 0.75rem;
   }
   .title {
     font-size: 18vw;
