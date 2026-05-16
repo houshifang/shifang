@@ -19,9 +19,6 @@
   <link rel="icon" type="image/png" href="./assets/ico.png">
   <link rel="stylesheet" href="style.css">
 
-  <!-- 提前与 CDN 建立连接，缩短 GSAP / Lenis 首次请求耗时 -->
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
   <!-- Hero 拖尾图：HTML 解析阶段即开始下载，避免首次 hover 时才发起请求 -->
   <link rel="preload" as="image" href="./assets/trail-01.webp" fetchpriority="high">
   <link rel="preload" as="image" href="./assets/trail-02.webp" fetchpriority="high">
@@ -153,8 +150,8 @@
 
   <site-footer></site-footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis/dist/lenis.min.js"></script>
+  <script src="./assets/vendor/gsap.min.js"></script>
+  <script src="./assets/vendor/lenis.min.js"></script>
   <script src="script.js"></script>
   <script src="./assets/site-footer.js" defer></script>
 </body>
