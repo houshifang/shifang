@@ -29,7 +29,7 @@ const WORD_TEXTS = [
   "inspiration", "art", "music", "interface", "details", "every", "pixel",
   "matters", "2026", "stay", "curious", "make", "good", "things",
 ];
-const UNIFORM_SIZE = 32;
+const UNIFORM_SIZE = 36;
 const WORDS = WORD_TEXTS.map((text) => {
   const highlight = HIGHLIGHTS.has(text);
   return {
