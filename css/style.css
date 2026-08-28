@@ -335,7 +335,7 @@ body {
 }
 
 .cursor-follower::after {
-  background: url("./assets/cursor-pointer.svg") center / contain no-repeat;
+  background: url("../assets/site/cursor-pointer.svg") center / contain no-repeat;
   opacity: 0;
   transform: scale(0.72);
   transition:

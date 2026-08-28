@@ -11,9 +11,9 @@
 
 用法：
     cd 网站
-    python3 scripts/compress-images.py
-    python3 scripts/compress-images.py --quality 88 --force
-    python3 scripts/compress-images.py --input /some/dir --output /other/dir
+    python3 tools/compress-images.py
+    python3 tools/compress-images.py --quality 88 --force
+    python3 tools/compress-images.py --input /some/dir --output /other/dir
 """
 
 from __future__ import annotations

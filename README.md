@@ -7,14 +7,14 @@
 - **首页 (`index.html`)** — 个人介绍 + 7 个精选作品集，hero 区域有鼠标拖尾动画
 - **关于 (`about.html`)** — 履历、技能、联系方式
 - **随手记 (`notes.html`)** — 关于设计、AI 与生活的零散思考
-- **设计打卡挑战 (`dakafeng.html`)** — 50 天设计打卡作品墙
+- **设计打卡挑战 (`design-challenge.html`)** — 50 天设计打卡作品墙
 
 ## 🛠 技术栈
 
 - 纯 HTML / CSS / JavaScript，无构建工具
 - [GSAP](https://gsap.com/) — 入场动画 / 拖尾动画
 - [Lenis](https://github.com/darkroomengineering/lenis) — 平滑滚动
-- 通过 jsdelivr CDN 加载第三方库
+- 第三方库保存在 `assets/vendor/`，页面可直接本地运行
 
 ## 📁 目录结构
 
@@ -23,23 +23,30 @@
 ├── index.html              # 首页
 ├── about.html              # 关于
 ├── notes.html              # 随手记
-├── dakafeng.html           # 设计打卡详情
-├── script.js               # 首页交互逻辑
-├── about.js                # 关于页交互
-├── notes.js                # 随手记页交互
-├── dakafeng.js             # 打卡页交互
-├── style.css               # 全局样式
-├── scripts/
-│   └── compress-images.py  # 图片压缩脚本（PNG/JPG → WebP）
+├── design-challenge.html   # 设计打卡详情
+├── ai-design-evolution.html # AI 审美进化复盘
+├── css/
+│   └── style.css           # 全局样式
+├── js/
+│   ├── pages/             # 各页面交互逻辑
+│   │   ├── home.js
+│   │   ├── about.js
+│   │   ├── notes.js
+│   │   ├── design-challenge.js
+│   │   └── ai-design-evolution.js
+│   └── shared/            # 跨页面共用交互
+│       ├── click-spark.js
+│       └── site-footer.js
+├── tools/
+│   └── compress-images.py # 图片压缩工具（PNG/JPG → WebP）
 └── assets/
-    ├── ico.png             # favicon
-    ├── cursor-pointer.svg  # 自定义光标
-    ├── wechat-qr.webp      # 微信二维码
-    ├── trail-01~14.webp    # 首页拖尾动画图
+    ├── site/               # favicon、光标、微信二维码
+    ├── trail/              # 首页拖尾动画图
+    ├── vendor/             # GSAP、Lenis
     └── projects/
         ├── *.webp          # 项目封面
-        └── dakafeng/
-            └── 01~50.webp  # 打卡作品图
+        ├── dakafeng/       # 01~50.webp 打卡作品图
+        └── web-design-quality/
 ```
 
 ## 🚀 本地运行
@@ -74,7 +81,7 @@ npx serve .
 3. Branch 选 `main` / `(root)`
 4. 几分钟后访问 `https://<你的用户名>.github.io/<仓库名>/`
 
-> ⚠️ **部署后建议**：把 4 个 HTML 中 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
+> ⚠️ **部署后建议**：把 4 个 HTML 中 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/site/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
 
 ## 🖼 图片压缩脚本
 
@@ -85,7 +92,7 @@ npx serve .
 python3 -m pip install --user Pillow
 
 # 把要压缩的图片放进任意目录，然后：
-python3 scripts/compress-images.py \
+python3 tools/compress-images.py \
   --input  /path/to/source \
   --output ./assets/projects \
   --quality 90 \

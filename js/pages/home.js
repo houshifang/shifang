@@ -155,20 +155,20 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const images = [
-    "./assets/trail-01.webp",
-    "./assets/trail-02.webp",
-    "./assets/trail-03.webp",
-    "./assets/trail-04.webp",
-    "./assets/trail-05.webp",
-    "./assets/trail-06.webp",
-    "./assets/trail-07.webp",
-    "./assets/trail-08.webp",
-    "./assets/trail-09.webp",
-    "./assets/trail-10.webp",
-    "./assets/trail-11.webp",
-    "./assets/trail-12.webp",
-    "./assets/trail-13.webp",
-    "./assets/trail-14.webp",
+    "./assets/trail/trail-01.webp",
+    "./assets/trail/trail-02.webp",
+    "./assets/trail/trail-03.webp",
+    "./assets/trail/trail-04.webp",
+    "./assets/trail/trail-05.webp",
+    "./assets/trail/trail-06.webp",
+    "./assets/trail/trail-07.webp",
+    "./assets/trail/trail-08.webp",
+    "./assets/trail/trail-09.webp",
+    "./assets/trail/trail-10.webp",
+    "./assets/trail/trail-11.webp",
+    "./assets/trail/trail-12.webp",
+    "./assets/trail/trail-13.webp",
+    "./assets/trail/trail-14.webp",
   ];
 
   // 拖尾图主要靠 index.html 里的 <link rel="preload"> 在 HTML 解析阶段就开始下载；
