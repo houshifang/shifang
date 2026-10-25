@@ -537,7 +537,8 @@ body {
   margin-bottom: 0;
 }
 
-.note-article-body ol {
+.note-article-body ol,
+.note-article-body ul {
   display: grid;
   gap: 0.55rem;
   margin: 0.3rem 0 1.15em;
@@ -1289,7 +1290,7 @@ html.is-lightbox-open body {
 .quality-page .notes-intro {
   max-width: 58rem;
   margin-right: auto;
-  margin-bottom: 11.5rem;
+  margin-bottom: 5rem;
   margin-left: 0;
 }
 
@@ -1335,6 +1336,34 @@ html.is-lightbox-open body {
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
+}
+
+.quality-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2rem;
+  margin: 2rem 0 0;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.35rem;
+}
+
+.quality-summary dt {
+  margin-bottom: 0.6rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.75rem;
+}
+
+.quality-summary dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.quality-hero-stats {
+  margin-top: 2rem;
 }
 
 .quality-showcase {
@@ -1983,7 +2012,12 @@ html.is-lightbox-open body {
     line-height: 1.78;
   }
   .quality-page .notes-intro {
-    margin-bottom: 5.5rem;
+    margin-bottom: 3rem;
+  }
+  .quality-summary {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem;
   }
   .quality-showcase {
     margin-bottom: 4rem;
