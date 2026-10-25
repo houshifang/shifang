@@ -1,13 +1,17 @@
 (() => {
   const links = document.querySelectorAll('.header .nav a');
-  const page = window.location.pathname.split('/').pop() || 'index.html';
+  const pageName = (pathname) => {
+    const name = pathname.split('/').pop() || 'index.html';
+    return name.includes('.') ? name : `${name}.html`;
+  };
+  const page = pageName(window.location.pathname);
   const workPages = new Set(['index.html', 'ai-design-evolution.html', 'design-challenge.html', 'notes.html']);
 
   function updateNavigation() {
     const isContact = page === 'about.html' && window.location.hash === '#contact';
     links.forEach((link) => {
       const target = new URL(link.href, window.location.href);
-      const targetPage = target.pathname.split('/').pop();
+      const targetPage = pageName(target.pathname);
       const active = page === 'about.html'
         ? targetPage === 'about.html' && (isContact ? target.hash === '#contact' : !target.hash)
         : workPages.has(page) && targetPage === 'index.html';
