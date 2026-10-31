@@ -70,6 +70,14 @@ npx serve .
 
 打开浏览器访问 `http://localhost:5500` 即可。
 
+## 首页动效检查
+
+```bash
+node --test tests/home-trail.test.cjs
+```
+
+覆盖图片慢加载、加载失败、节点复用、页面返回与减少动态效果偏好。首页脚本与拖尾图片使用带版本的 URL，Netlify 的浏览器缓存规则位于 `_headers`。更换拖尾图片时，需要同步更新 `index.html` 与 `js/pages/home.js` 中的图片版本；修改首页脚本时更新它在 `index.html` 中的版本。
+
 ## 🌐 部署
 
 ### 部署到 Netlify（推荐，最快）

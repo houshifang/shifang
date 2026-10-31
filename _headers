@@ -1,0 +1,11 @@
+# 为拖尾图片和稳定的第三方库启用浏览器缓存，页面 HTML 仍使用 Netlify 默认校验策略。
+# 更换拖尾图片后，同步更新 home.js 与 index.html 中的内容版本。
+/assets/trail/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/assets/vendor/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# 首页脚本使用带版本的 URL；修改脚本时同步更新 index.html 中的版本。
+/js/pages/home.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
