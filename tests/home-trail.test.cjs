@@ -26,7 +26,7 @@ function createPage({ reducedMotion = false, supportsDecode = true, readyState =
   }
   const images = [];
   class FakeImage extends Surface {
-    constructor() {
+    constructor(isClone = false) {
       super();
       this.complete = false;
       this.naturalWidth = 0;
@@ -34,7 +34,15 @@ function createPage({ reducedMotion = false, supportsDecode = true, readyState =
       this.srcWrites = 0;
       this.classList = { add() {}, remove() {}, toggle() {} };
       if (!supportsDecode) this.decode = undefined;
-      images.push(this);
+      if (!isClone) images.push(this);
+    }
+    cloneNode() {
+      const clone = new FakeImage(true);
+      clone.src = this.src;
+      clone.complete = this.complete;
+      clone.naturalWidth = this.naturalWidth;
+      clone.className = this.className;
+      return clone;
     }
     set src(value) { this.url = value; this.srcWrites += 1; }
     get src() { return this.url || ''; }
@@ -103,7 +111,7 @@ test('慢加载时不播放空白图片，图片就绪后在最新指针位置�
   page.images[1].load();
   await flush();
   assert.equal(page.hero.children.length, 1);
-  assert.equal(page.hero.children[0], page.images[1]);
+  assert.equal(page.hero.children[0].src, page.images[1].src);
   assert.equal(page.hero.children[0].lastSet.x, 230);
 });
 
@@ -116,19 +124,21 @@ test('不依赖 pointerenter，第一下移动即可显示已就绪图片', asyn
   assert.equal(page.hero.children.length, 1);
 });
 
-test('动画结束后复用同一节点，不重新请求图片', async () => {
+test('仅一张素材就绪时也能连续生成超过素材总数的独立拖尾', async () => {
   const page = createPage();
   page.images[0].load();
   await flush();
-  page.move(20);
-  page.move(220);
-  assert.equal(page.hero.children.length, 1, '正在播放的节点不会被抢走');
+  for (let index = 0; index < 25; index += 1) page.move(index % 2 ? 800 : 100);
+  assert.equal(page.hero.children.length, 25, '快速移动不能因素材被占用而跳过触发');
+  assert.equal(new Set(page.hero.children).size, 25, '每次触发使用独立节点');
+  assert.ok(page.hero.children.every((image) => image.src === page.images[0].src));
+  assert.equal(page.images[0].srcWrites, 1, '预加载素材只设置一次地址');
+  const removed = page.hero.children.at(-1);
   page.timelines.at(-1).complete();
-  assert.equal(page.hero.children.length, 0);
-  page.move(420);
-  assert.equal(page.hero.children[0], page.images[0]);
-  assert.equal(page.images[0].srcWrites, 1);
-  assert.equal(page.images.length, 14, '移动指针不再创建新的图片节点');
+  assert.equal(page.hero.children.length, 24, '一张结束不影响其他图片');
+  page.move(500);
+  assert.equal(page.hero.children.length, 25);
+  assert.notEqual(page.hero.children.at(-1), removed);
 });
 
 test('首批图片失败后仍加载后续图片，后台请求最多同时启动两个', async () => {
@@ -140,7 +150,7 @@ test('首批图片失败后仍加载后续图片，后台请求最多同时启�
   assert.equal(page.images.filter((image) => image.src).length, 5);
   page.images[3].load();
   await flush();
-  assert.equal(page.hero.children[0], page.images[3]);
+  assert.equal(page.hero.children[0].src, page.images[3].src);
   assert.equal(page.images.filter((image) => image.src).length, 6);
 });
 

@@ -176,9 +176,10 @@ const initHomePage = () => {
     image.alt = "";
     image.decoding = "async";
     image.loading = "eager";
-    return { src, image, ready: false, pending: null, timeline: null };
+    return { src, image, ready: false, pending: null };
   });
 
+  const activeTrails = new Set();
   let imageIndex = 0;
   let lastX = 0;
   let lastY = 0;
@@ -213,17 +214,17 @@ const initHomePage = () => {
     return smoothedSpeed;
   };
 
-  const releaseImage = (entry) => {
-    entry.image.remove();
-    entry.timeline = null;
+  const releaseImage = (trail) => {
+    trail.image.remove();
+    activeTrails.delete(trail);
   };
 
   const createTrailImage = (x, y, speed) => {
-    // 只使用已解码、且没有正在播放的节点；不会对空白图片启动动画。
+    // 从已解码的素材中连续取图；每次生成独立节点，不受素材数量或旧动画占用限制。
     let entry;
     for (let offset = 0; offset < entries.length; offset += 1) {
       const index = (imageIndex + offset) % entries.length;
-      if (entries[index].ready && !entries[index].timeline) {
+      if (entries[index].ready) {
         entry = entries[index];
         imageIndex = (index + 1) % entries.length;
         break;
@@ -234,7 +235,9 @@ const initHomePage = () => {
     const imageSize =
       config.minImageSize + (config.maxImageSize - config.minImageSize) * speed;
     const rotation = gsap.utils.random(-28, 28) * (1 + speed);
-    const img = entry.image;
+    const img = entry.image.cloneNode(false);
+    const trail = { image: img, timeline: null };
+    activeTrails.add(trail);
     gsap.set(img, {
       x, y,
       xPercent: -50,
@@ -246,8 +249,8 @@ const initHomePage = () => {
       autoAlpha: 0,
     });
     hero.appendChild(img);
-    entry.timeline = gsap
-      .timeline({ onComplete: () => releaseImage(entry) })
+    trail.timeline = gsap
+      .timeline({ onComplete: () => releaseImage(trail) })
       .to(img, {
         scale: 1,
         autoAlpha: 1,
@@ -312,9 +315,9 @@ const initHomePage = () => {
     smoothedSpeed = 0;
     maxSpeed = 0.5;
     lastTime = performance.now();
-    entries.forEach((entry) => {
-      if (entry.timeline) entry.timeline.kill();
-      releaseImage(entry);
+    activeTrails.forEach((trail) => {
+      trail.timeline.kill();
+      releaseImage(trail);
     });
   };
 
