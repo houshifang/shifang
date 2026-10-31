@@ -5,7 +5,7 @@
     return name.includes('.') ? name : `${name}.html`;
   };
   const page = pageName(window.location.pathname);
-  const workPages = new Set(['index.html', 'ai-design-evolution.html', 'design-challenge.html', 'notes.html']);
+  const workPages = new Set(['index.html', 'ai-design-evolution.html', 'trust-conversion.html', 'design-challenge.html', 'notes.html']);
 
   function updateNavigation() {
     const isContact = page === 'about.html' && window.location.hash === '#contact';

@@ -1,0 +1,325 @@
+/* 付费体验项目：复用审美复盘页的长文、摘要与卡片样式。 */
+.trust-page { --trust-accent: #ff9ac8; }
+.trust-page .notes-title { max-width: 12em; }
+.trust-page:not(.payment-preview) .notes-title { max-width: none; }
+.trust-page:not(.payment-preview) .notes-intro { margin: 0 auto 3rem; }
+.trust-page:not(.payment-preview) .quality-article,
+.trust-page:not(.payment-preview) .quality-footer { margin-left: auto; margin-right: auto; }
+.trust-page:not(.payment-preview) .quality-article > .quality-section:first-child { padding-top: 0; }
+.trust-subtitle { margin-top: 1.4rem; font-size: clamp(1.05rem, 2vw, 1.4rem); font-weight: 400; line-height: 1.6; color: #d6d6d6; }
+.trust-subheading { margin: 2.5rem 0 1rem; color: #eee; font-size: 1.05rem; font-weight: 500; line-height: 1.7; }
+.trust-caption { margin-top: 1rem; color: #a3a3a3; font-size: 0.75rem; line-height: 1.8; }
+.trust-roadmap-section { margin-top: 3rem; }
+.trust-roadmap-section > .trust-subheading { margin: 0 0 1.1rem; text-align: left; }
+.trust-roadmap { display: grid; gap: 2.25rem; margin: 0; padding: 1rem; border: 1px solid #292929; border-radius: 1rem; list-style: none; }
+.trust-roadmap li { position: relative; min-width: 0; padding: 1rem 1.5rem; border-radius: 0.75rem; background: #111; text-align: center; }
+.trust-roadmap h4 { display: flex; align-items: baseline; justify-content: center; gap: 0.45rem; margin: 0; color: #f0f0f0; font-size: 1rem; font-weight: 500; line-height: 1.4; }
+.trust-roadmap h4 > span { font-variant-numeric: tabular-nums; }
+.trust-roadmap p { max-width: 46rem; margin: 0.4rem auto 0; color: #b3b3b3; font-size: 0.85rem; line-height: 1.6; }
+.trust-roadmap-arrow { position: absolute; bottom: -1.75rem; left: 50%; width: 1.25rem; height: 1.25rem; transform: translateX(-50%); color: #999; pointer-events: none; }
+.trust-flow-figure { margin-top: 2rem; }
+.trust-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; padding: 1px; background: #292929; border-radius: 0.35rem; overflow: hidden; list-style: none; }
+.trust-flow li { position: relative; padding: 1.5rem 1rem; background: #0b0b0b; color: #ddd; font-size: 0.85rem; text-align: center; }
+.trust-flow .trust-flow-payment { background: #21161b; color: var(--trust-accent); }
+.trust-principles { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
+.trust-principles .quality-insight-card { padding: 1.5rem; }
+.trust-principles .quality-insight-card p { color: #aaa; }
+.trust-principles .quality-insight-card .trust-principle-voice { margin-bottom: 0.75rem; color: #ddd; }
+.trust-service-path-wrap { margin-top: 1.25rem; overflow-x: auto; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); background: #111; scrollbar-width: thin; }
+.trust-service-path-wrap:focus-visible { outline: 2px solid var(--trust-accent); outline-offset: 4px; }
+.trust-service-path { width: 100%; min-width: 49rem; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+.trust-service-path td { position: relative; padding: 1rem 0.75rem; color: #ddd; font-size: var(--trust-size-body); line-height: 1.7; text-align: center; white-space: nowrap; }
+.trust-service-path td + td { border-left: 1px solid var(--trust-panel-border); }
+.trust-service-step { display: block; margin-bottom: 0.35rem; color: var(--trust-accent); font-size: var(--trust-size-caption); font-variant-numeric: tabular-nums; }
+.trust-service-path td:not(:last-child)::after { content: '→'; position: absolute; top: 50%; right: -0.6rem; z-index: 1; width: 1.2rem; transform: translateY(-50%); background: #111; color: #888; font-size: var(--trust-size-caption); line-height: 1.5; }
+.trust-action { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #242424; }
+.trust-action .trust-subheading { display: flex; align-items: flex-start; gap: 0.65rem; margin-top: 0; }
+.trust-action-icon { flex: 0 0 auto; width: 1.35rem; height: 1.35rem; margin-top: 0.15rem; color: var(--trust-accent); }
+.trust-action-problem { margin-top: 1rem; color: #aaa; font-size: 0.8rem; line-height: 1.8; }
+.trust-solution-figure { margin: 1.5rem 0 0; }
+.trust-solution-figure img { display: block; width: 100%; height: auto; border-radius: var(--trust-panel-radius); }
+.trust-solution-figure figcaption { margin-top: 0.75rem; color: #999; font-size: var(--trust-size-caption); line-height: 1.8; }
+/* 行业案例截图始终左右并列，窄屏也保留两列。 */
+.trust-case-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1rem; }
+.trust-case-gallery > img { min-width: 0; }
+.trust-case-gallery img { border: 0; }
+.trust-product-comparison { display: grid; grid-template-columns: minmax(0, 30fr) minmax(0, 17fr); align-items: start; gap: 1rem; }
+.trust-product-comparison img { min-width: 0; border: 0; }
+.trust-action:is(#industry-cases, #product-personalization) { scroll-margin-top: 6rem; }
+@media (max-width: 768px) {
+  .trust-case-gallery, .trust-product-comparison { gap: 0.5rem; }
+}
+.trust-design-drafts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 1rem; margin-top: 1.5rem; }
+.trust-related-project { margin-top: var(--trust-space-block); color: #bbb; font-size: var(--trust-size-body); line-height: 1.75; }
+.trust-related-project a { color: var(--trust-accent); text-decoration: underline; text-underline-offset: 0.2em; }
+.trust-related-project a:hover { color: #fff; }
+.trust-design-drafts figure { min-width: 0; margin: 0; }
+.trust-design-drafts img { display: block; width: 100%; height: auto; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); }
+.trust-design-drafts figcaption { margin-top: 0.65rem; color: #bbb; font-size: var(--trust-size-caption); line-height: 1.8; }
+@media (max-width: 768px) {
+  .trust-design-drafts { gap: 0.5rem; }
+}
+.trust-solution-end, .trust-impact-body { margin-top: 2rem; }
+.trust-validation { margin-top: 1.5rem; list-style: none; counter-reset: validation; }
+.trust-validation li { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 1rem; padding: 1.25rem 0; color: #d1d1d1; font-size: 0.9rem; line-height: 1.8; border-top: 1px solid #242424; counter-increment: validation; }
+.trust-validation li::before { content: '0' counter(validation); color: #888; font-size: 0.7rem; }
+.trust-impact-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 2rem; }
+.trust-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.trust-page section[id] { scroll-margin-top: 6rem; }
+.trust-quote { margin: 2rem 0; padding: 0.2rem 0 0.2rem 1.35rem; border-left: 2px solid var(--trust-accent); color: #eee; font-size: 0.95rem; line-height: 1.85; }
+.trust-table-wrap { margin-top: 2rem; border: 1px solid #292929; border-radius: 0.35rem; overflow: hidden; }
+.trust-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8rem; line-height: 1.8; }
+.trust-table caption { padding: 1rem 1.25rem; text-align: left; color: #b3b3b3; background: #0b0b0b; font-size: 0.72rem; }
+.trust-table th { color: #eee; font-weight: 500; background: #111; }
+.trust-table td { color: #b3b3b3; }
+.trust-strategy-emoji { display: inline-block; margin-right: 0.55em; }
+.trust-table th, .trust-table td { padding: 1rem 1.25rem; border-top: 1px solid #242424; vertical-align: top; }
+.trust-page a:focus-visible { outline: 2px solid var(--trust-accent); outline-offset: 5px; }
+@media (max-width: 768px) {
+  .trust-page:not(.payment-preview) .notes-title { font-size: min(4.2rem, 6.5vw); white-space: nowrap; }
+  .trust-quote { font-size: 0.92rem; }
+  .trust-roadmap { padding: 0.75rem; }
+  .trust-roadmap li { padding: 0.9rem 0.85rem; }
+  .trust-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust-principles { grid-template-columns: 1fr; }
+  .trust-impact-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .trust-impact-stats div + div { border-top: 1px solid #292929; }
+  .trust-table th, .trust-table td { padding: 0.85rem 0.6rem; }
+  .trust-table { font-size: 0.73rem; }
+}
+
+/* 原版案例的字号层级：大标题沿用站点，其余内容统一为四档。 */
+.trust-page:not(.payment-preview) {
+  --trust-panel-radius: 0.5rem;
+  --trust-panel-border: #333;
+  --trust-size-section: clamp(1.45rem, 2.4vw, 1.85rem);
+  --trust-size-subheading: 1.05rem;
+  --trust-size-body: 0.95rem;
+  --trust-size-caption: 0.75rem;
+  --trust-space-paragraph: 0.75rem;
+  --trust-space-heading: 0.75rem;
+  --trust-space-block: 1.5rem;
+  --trust-space-group: 2rem;
+  --trust-space-section: 3rem;
+}
+
+.trust-page:not(.payment-preview) :is(
+  .quality-summary,
+  .quality-insight-card,
+  .trust-roadmap,
+  .trust-roadmap li,
+  .trust-flow,
+  .trust-table-wrap
+) { border-radius: var(--trust-panel-radius); }
+
+/* 外框使用真实描边；前景描边防止内部背景遮住圆角外沿。 */
+.trust-page:not(.payment-preview) :is(
+  .quality-summary,
+  .quality-insight-card,
+  .trust-roadmap,
+  .trust-flow,
+  .trust-table-wrap
+) {
+  position: relative;
+  border: 1px solid var(--trust-panel-border);
+}
+
+.trust-page:not(.payment-preview) :is(
+  .quality-summary,
+  .quality-insight-card,
+  .trust-roadmap,
+  .trust-flow,
+  .trust-table-wrap
+)::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: 1;
+  border: 1px solid var(--trust-panel-border);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.trust-page:not(.payment-preview) .trust-flow {
+  gap: 0;
+  padding: 0;
+  background: #0b0b0b;
+}
+.trust-page:not(.payment-preview) .trust-flow > li + li {
+  border-left: 1px solid var(--trust-panel-border);
+}
+.trust-page:not(.payment-preview) .trust-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.trust-page:not(.payment-preview) .trust-table thead th {
+  border-top: 0;
+}
+@media (max-width: 768px) {
+  .trust-page:not(.payment-preview) .trust-flow > li:nth-child(odd) { border-left: 0; }
+  .trust-page:not(.payment-preview) .trust-flow > li:nth-child(n + 3) { border-top: 1px solid var(--trust-panel-border); }
+}
+
+.trust-page:not(.payment-preview) :is(
+  .note-article-title,
+  .quality-stats strong
+) { font-size: var(--trust-size-section); }
+
+.trust-page:not(.payment-preview) :is(
+  .trust-subheading,
+  .note-article-body h3,
+  .quality-insight-card h3
+) { font-size: var(--trust-size-subheading); }
+
+.trust-page:not(.payment-preview) :is(
+  .note-article-body,
+  .quality-summary dd,
+  .trust-quote,
+  .trust-roadmap h4,
+  .trust-flow li,
+  .quality-insight-card p,
+  .trust-action-problem,
+  .trust-validation li,
+  .trust-table
+) { font-size: var(--trust-size-body); }
+
+.trust-page:not(.payment-preview) :is(
+  .trust-roadmap p,
+  .trust-caption,
+  .quality-kicker,
+  .quality-meta span,
+  .quality-summary dt,
+  .trust-table caption,
+  .quality-stats span,
+  .notes-back
+) { font-size: var(--trust-size-caption); }
+
+.trust-page:not(.payment-preview) .trust-validation li::before {
+  font-size: var(--trust-size-caption);
+}
+
+/* 02：问题说明、流程示例、研究结论三组；组内紧凑，组间留白。 */
+.trust-page:not(.payment-preview) #challenge .trust-challenge-evidence { display: grid; gap: var(--trust-space-block); margin-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) #challenge .trust-challenge-evidence > figure { margin: 0; }
+.trust-page:not(.payment-preview) #challenge .trust-flow li { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+.trust-page:not(.payment-preview) #challenge .trust-caption { margin-top: 0.75rem; }
+.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion { margin-top: var(--trust-space-group); padding-top: var(--trust-space-block); border-top: 1px solid #242424; }
+.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion h3 { margin-top: 0; margin-bottom: var(--trust-space-heading); }
+
+/* 旧流程的静态模拟聊天；付款样式仅为预览内容。 */
+.trust-chat-preview { margin: 1.5rem 0; }
+.trust-chat-canvas { padding: 1.5rem 2rem; border: 0; border-radius: var(--trust-panel-radius); background: #f5f1e8; color: #292723; }
+.trust-chat-header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 1rem; max-width: 44rem; margin: 0 auto 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #ded8cd; color: #756e62; font-size: var(--trust-size-caption); line-height: 1.8; }
+.trust-chat-scroll { height: 20rem; max-height: 55vh; max-width: 44rem; margin: 0 auto; padding-right: 0.75rem; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-gutter: stable; scrollbar-width: thin; scrollbar-color: #b9b0a1 transparent; }
+.trust-chat-scroll:focus-visible { outline: 2px solid #8c806a; outline-offset: 4px; border-radius: var(--trust-panel-radius); }
+.trust-chat-messages { display: flex; flex-direction: column; gap: 2rem; margin: 0; padding: 0 0 0.5rem; list-style: none; }
+.trust-chat-message { min-width: 0; max-width: 85%; padding: 0.8rem 1.25rem; font-size: var(--trust-size-caption); line-height: 1.8; overflow-wrap: anywhere; }
+.trust-chat-message p { margin: 0; }
+.trust-chat-message--user { align-self: flex-end; border-radius: 999px; background: #292723; color: #faf7f0; }
+.trust-chat-message--ai { align-self: flex-start; padding: 0; background: none; color: #292723; }
+.trust-chat-message strong { font-weight: 600; }
+.trust-chat-payment { display: inline-block; margin-top: 0.85rem; padding: 0.65rem 1rem; border-radius: var(--trust-panel-radius); background: #292723; color: #faf7f0; font-weight: 500; line-height: 1.6; }
+@media (max-width: 768px) {
+  .trust-chat-canvas { padding: 1.25rem; }
+  .trust-chat-message { max-width: 92%; }
+}
+
+/* 03 研究步骤复用项目推进过程的纵向卡片样式。 */
+.trust-page:not(.payment-preview) .note-article-body .trust-research-flow { display: grid; grid-template-columns: 1fr; gap: 2.25rem; margin: 1.5rem 0 0; padding: 1rem; list-style: none; }
+@media (max-width: 768px) {
+  .trust-page:not(.payment-preview) .note-article-body .trust-research-flow { padding: 0.75rem; }
+}
+
+/* 原始咨询证据：完整展示静态截图。 */
+.trust-research-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 1rem; margin-top: 1.25rem; }
+.trust-research-shot { min-width: 0; margin: 0; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); background: #101010; overflow: hidden; }
+.trust-research-shot img { display: block; width: 100%; height: auto; }
+.trust-research-shot figcaption { padding: 1rem; border-top: 1px solid var(--trust-panel-border); color: #aaa; font-size: var(--trust-size-caption); line-height: 1.8; }
+.trust-research-shot-title { display: block; margin-bottom: 0.5rem; color: #eee; font-size: var(--trust-size-body); font-weight: 500; }
+.trust-research-shot figcaption p { margin: 0; }
+@media (max-width: 768px) {
+  .trust-research-gallery { grid-template-columns: 1fr; gap: 1.5rem; }
+  .trust-research-shot { width: min(100%, 22rem); justify-self: center; }
+}
+
+/* 研究归纳：左侧说明服务特征，右侧呈现对应的具体行为。 */
+.trust-principles.trust-principles--detailed { grid-template-columns: 1fr; gap: 1rem; margin-top: 1.5rem; }
+.trust-principles--detailed .trust-trait-card { display: grid; grid-template-columns: 1fr 1.7fr; align-items: start; gap: 2rem; }
+.trust-page:not(.payment-preview) .trust-trait-card .trust-trait-question { margin: 0.65rem 0 0; color: #999; font-size: var(--trust-size-caption); line-height: 1.8; }
+.trust-trait-card ul { display: grid; gap: 0.4rem; margin: 0; padding-left: 1.15rem; color: #bbb; font-size: var(--trust-size-caption); line-height: 1.8; }
+.trust-research-synthesis { margin-top: 2.5rem; }
+.trust-research-synthesis h3 { margin-top: 0; }
+.trust-research-patterns { margin: 1.25rem 0 0; border-top: 1px solid var(--trust-panel-border); }
+.trust-research-patterns > div { display: grid; grid-template-columns: 7rem minmax(0, 1fr); gap: 1.5rem; padding: 1rem 0; border-bottom: 1px solid #242424; font-size: var(--trust-size-body); line-height: 1.8; }
+.trust-research-patterns dt { color: #eee; font-weight: 500; }
+.trust-research-patterns dd { margin: 0; color: #bbb; }
+.trust-research-takeaway { border-left-width: 3px; }
+.trust-research-takeaway > span { padding: 0.3em 0.15em; background: var(--trust-accent); color: #141014; line-height: 2.2; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+@media (max-width: 768px) {
+  .trust-principles--detailed .trust-trait-card { grid-template-columns: 1fr; gap: 1.25rem; }
+  .trust-research-patterns > div { grid-template-columns: 1fr; gap: 0.4rem; }
+}
+
+/* 篇末研究资料默认收起，使用原生折叠交互。 */
+.trust-research-appendix { margin-top: 1rem; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); }
+.trust-research-appendix > summary { display: flex; align-items: center; gap: 0.75rem; padding: 1.25rem 1.5rem; color: #eee; font-size: var(--trust-size-body); line-height: 1.8; list-style: none; cursor: pointer; }
+.trust-research-appendix > summary::marker { content: ''; }
+.trust-research-appendix > summary::-webkit-details-marker { display: none; }
+.trust-appendix-toggle { display: grid; place-items: center; flex: 0 0 auto; width: 1.75rem; height: 1.75rem; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); background: #181818; }
+.trust-appendix-icon { width: 1rem; height: 1rem; color: #bbb; transition: transform 0.18s ease; }
+.trust-research-appendix[open] .trust-appendix-icon { transform: rotate(90deg); }
+.trust-research-appendix > summary:hover .trust-appendix-icon { color: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .trust-appendix-icon { transition: none; }
+}
+.trust-research-appendix > summary:focus-visible { outline: 2px solid var(--trust-accent); outline-offset: -4px; border-radius: inherit; }
+.trust-appendix-content { display: grid; gap: 2rem; padding: 1.5rem; border-top: 1px solid var(--trust-panel-border); }
+.trust-appendix-content figure { min-width: 0; margin: 0; }
+.trust-appendix-content figcaption { margin-bottom: 0.8rem; color: #bbb; font-size: var(--trust-size-body); line-height: 1.8; }
+.trust-appendix-content img { display: block; width: 100%; height: auto; border-radius: var(--trust-panel-radius); }
+@media (max-width: 768px) {
+  .trust-research-appendix > summary, .trust-appendix-content { padding: 1rem; }
+}
+
+/* 全页阅读节奏：段落 12px、标题下 12px、内容块 24px、分组 32px。
+   以同一组变量控制，避免长文默认样式与局部规则各自叠加留白。 */
+.trust-page:not(.payment-preview) .quality-section.note-article { padding-block: var(--trust-space-section); }
+.trust-page:not(.payment-preview) .quality-kicker { margin-bottom: 0.5rem; }
+.trust-page:not(.payment-preview) .note-article-title { margin-bottom: 1.25rem; }
+.trust-page:not(.payment-preview) .note-article-body { line-height: 1.75; }
+.trust-page:not(.payment-preview) .note-article-body > p { margin: 0; }
+.trust-page:not(.payment-preview) .note-article-body > p + p { margin-top: var(--trust-space-paragraph); }
+.trust-page:not(.payment-preview) .note-article-body > h3 { margin: var(--trust-space-group) 0 var(--trust-space-heading); line-height: 1.5; }
+.trust-page:not(.payment-preview) .note-article-body > h3:first-child { margin-top: 0; }
+.trust-page:not(.payment-preview) .quality-section > :not(.note-article-title) + .note-article-body { margin-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) .trust-subheading { margin: var(--trust-space-group) 0 var(--trust-space-heading); line-height: 1.5; }
+.trust-page:not(.payment-preview) .trust-roadmap-section { margin-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) .trust-roadmap-section > .trust-subheading { margin-top: 0; }
+.trust-page:not(.payment-preview) :is(.quality-summary, .trust-table-wrap, .trust-service-path-wrap, .trust-impact-stats, .trust-validation) { margin-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) .note-article-title + :is(.quality-summary, .trust-impact-stats, .trust-validation) { margin-top: 0; }
+.trust-page:not(.payment-preview) .note-article-body > h3 + .trust-research-flow { margin-top: 0; }
+.trust-page:not(.payment-preview) .trust-research-gallery { margin-top: var(--trust-space-heading); }
+.trust-page:not(.payment-preview) .trust-principles--detailed { margin-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) .trust-research-patterns { margin-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) .trust-action { margin-top: var(--trust-space-group); padding-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) .trust-action > .trust-subheading { margin: 0 0 var(--trust-space-heading); }
+.trust-page:not(.payment-preview) .trust-action-problem { margin-top: var(--trust-space-paragraph); line-height: 1.75; }
+.trust-page:not(.payment-preview) :is(.trust-solution-figure, .trust-design-drafts) { margin-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) .trust-solution-figure + .trust-solution-figure { margin-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) :is(.trust-solution-figure, .trust-design-drafts) figcaption { margin-top: 0.5rem; line-height: 1.6; }
+.trust-page:not(.payment-preview) .trust-quote { margin: var(--trust-space-block) 0; line-height: 1.75; }
+.trust-page:not(.payment-preview) .quality-section > .trust-quote:last-child { margin-bottom: 0; }
+.trust-page:not(.payment-preview) .trust-reflection-direction { margin: var(--trust-space-block) 0; }
+.trust-page:not(.payment-preview) .trust-reflection-direction p { margin: 0; }
+.trust-page:not(.payment-preview) .trust-reflection-direction p + p { margin-top: 0.375rem; }
+.trust-page:not(.payment-preview) .quality-article > .quality-section:last-child { padding-bottom: 0; }
+.trust-page:not(.payment-preview) .quality-footer { margin-top: var(--trust-space-section); padding-top: var(--trust-space-group); }
+@media (max-width: 768px) {
+  .trust-page:not(.payment-preview) {
+    --trust-space-paragraph: 0.625rem;
+    --trust-space-heading: 0.625rem;
+    --trust-space-block: 1.25rem;
+    --trust-space-group: 1.75rem;
+    --trust-space-section: 2.5rem;
+  }
+}

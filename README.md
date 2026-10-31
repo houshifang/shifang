@@ -4,7 +4,9 @@
 
 ## ✨ 主要内容
 
-- **首页 (`index.html`)** — 个人介绍 + 7 个精选作品集，hero 区域有鼠标拖尾动画
+- **首页 (`index.html`)** — 个人介绍 + 9 个精选作品集，hero 区域有鼠标拖尾动画
+- **从工具到服务 (`trust-conversion.html`)** — AI 建站首次付费体验设计复盘
+- **AI 审美进化 (`ai-design-evolution.html`)** — 生成质量实验与落地复盘
 - **关于 (`about.html`)** — 履历、技能、联系方式
 - **随手记 (`notes.html`)** — 关于设计、AI 与生活的零散思考
 - **设计打卡挑战 (`design-challenge.html`)** — 50 天设计打卡作品墙
@@ -25,8 +27,10 @@
 ├── notes.html              # 随手记
 ├── design-challenge.html   # 设计打卡详情
 ├── ai-design-evolution.html # AI 审美进化复盘
+├── trust-conversion.html  # AI 建站付费体验设计复盘
 ├── css/
-│   └── style.css           # 全局样式
+│   ├── style.css           # 全局样式
+│   └── trust-conversion.css # 付费体验复盘补充样式
 ├── js/
 │   ├── pages/             # 各页面交互逻辑
 │   │   ├── home.js
@@ -46,7 +50,8 @@
     └── projects/
         ├── *.webp          # 项目封面
         ├── dakafeng/       # 01~50.webp 打卡作品图
-        └── web-design-quality/
+        ├── web-design-quality/
+        └── trust-conversion/
 ```
 
 ## 🚀 本地运行
@@ -81,7 +86,7 @@ npx serve .
 3. Branch 选 `main` / `(root)`
 4. 几分钟后访问 `https://<你的用户名>.github.io/<仓库名>/`
 
-> ⚠️ **部署后建议**：把 4 个 HTML 中 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/site/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
+> ⚠️ **部署后建议**：把各个 HTML 页面中的 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/site/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
 
 ## 🖼 图片压缩脚本
 
