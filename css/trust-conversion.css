@@ -6,6 +6,32 @@
 .trust-page:not(.payment-preview) .quality-article,
 .trust-page:not(.payment-preview) .quality-footer { margin-left: auto; margin-right: auto; }
 .trust-page:not(.payment-preview) .quality-article > .quality-section:first-child { padding-top: 0; }
+
+/* 目录使用正文外的留白，保留原有阅读宽度。 */
+.trust-reading-layout { position: relative; width: 100%; max-width: 58rem; margin-inline: auto; }
+.trust-toc-rail { position: absolute; inset: 0 auto 0 calc(100% + 2.5rem); width: 9rem; }
+.trust-toc { position: sticky; top: 7rem; max-height: calc(100dvh - 8rem); overflow-y: auto; scrollbar-width: thin; }
+.trust-toc-details > summary { display: none; }
+.trust-toc-heading { margin: 0 0 1rem; padding-left: 1rem; color: #999; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.08em; }
+.trust-toc-list { margin: 0; padding: 0; list-style: none; }
+.trust-toc-list a { display: flex; align-items: center; gap: 0.65rem; min-height: 2.75rem; padding: 0.5rem 0.75rem 0.5rem 1rem; border-left: 2px solid #242424; color: #a3a3a3; font-size: 0.8125rem; line-height: 1.5; text-decoration: none; }
+.trust-toc-list a > span { color: #888; font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
+.trust-toc-list a:hover { color: #fff; }
+.trust-toc-list a[aria-current="location"] { border-left-color: var(--trust-accent); color: var(--trust-accent); font-weight: 500; }
+.trust-toc-list a[aria-current="location"] > span { color: inherit; }
+.trust-toc-list a:focus-visible { outline-offset: -2px; }
+@media (max-width: 85.999rem) {
+  .trust-toc-rail { position: sticky; inset: auto; top: 4.75rem; z-index: 40; width: 100%; margin-bottom: 1.5rem; }
+  .trust-toc { position: static; max-height: calc(100dvh - 6rem); padding-inline: 1rem; border: 1px solid #292929; border-radius: 0.5rem; background: #0b0b0b; }
+  .trust-toc-details > summary { display: list-item; padding: 0.875rem 0.25rem; color: #eee; font-size: 0.8125rem; line-height: 1.5; cursor: pointer; }
+  .trust-toc-details > summary::marker { color: var(--trust-accent); }
+  .trust-toc-details > summary:focus-visible { outline: 2px solid var(--trust-accent); outline-offset: -2px; }
+  .trust-toc-current { float: right; margin-left: 1rem; color: #a3a3a3; }
+  .trust-toc-heading { display: none; }
+  .trust-toc-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.25rem 1rem; padding-block: 0.5rem 1rem; border-top: 1px solid #292929; }
+  .trust-toc-list a { min-height: 2.75rem; padding-left: 0.75rem; }
+  .trust-page .trust-reading-layout section[id] { scroll-margin-top: 9.5rem; }
+}
 .trust-subtitle { margin-top: 1.4rem; font-size: clamp(1.05rem, 2vw, 1.4rem); font-weight: 400; line-height: 1.6; color: #d6d6d6; }
 .trust-subheading { margin: 2.5rem 0 1rem; color: #eee; font-size: 1.05rem; font-weight: 500; line-height: 1.7; }
 .trust-caption { margin-top: 1rem; color: #a3a3a3; font-size: 0.75rem; line-height: 1.8; }

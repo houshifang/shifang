@@ -89,6 +89,12 @@ body {
   flex: 1;
 }
 
+.header-logo a {
+  color: inherit;
+  text-decoration: none;
+  letter-spacing: inherit;
+}
+
 .nav {
   flex: 1;
   display: flex;
@@ -411,7 +417,7 @@ body {
   .nav {
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
+    gap: clamp(0.5rem, 2vw, 1rem);
     min-width: 0;
     font-size: 0.9375rem;
     letter-spacing: 0.04em;
@@ -449,15 +455,6 @@ body {
 /* ==========================================================
    Notes / 随手记 详情页
    ========================================================== */
-.notes-page .header-logo a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.notes-page .header-logo a {
-  letter-spacing: inherit;
-}
-
 .notes-main {
   padding: 9rem 3rem 7rem;
 }

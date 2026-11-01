@@ -8,6 +8,7 @@
 - **从工具到服务 (`trust-conversion.html`)** — AI 建站首次付费体验设计复盘
 - **AI 审美进化 (`ai-design-evolution.html`)** — 生成质量实验与落地复盘
 - **关于 (`about.html`)** — 履历、技能、联系方式
+- **资源 (`resources.html`)** — 111 个设计与开发收藏，按工具、灵感、学习、行业四类组织，支持多选筛选
 - **随手记 (`notes.html`)** — 关于设计、AI 与生活的零散思考
 - **设计打卡挑战 (`design-challenge.html`)** — 50 天设计打卡作品墙
 
@@ -25,22 +26,29 @@
 ├── index.html              # 首页
 ├── about.html              # 关于
 ├── notes.html              # 随手记
+├── resources.html          # 资源收藏
 ├── design-challenge.html   # 设计打卡详情
 ├── ai-design-evolution.html # AI 审美进化复盘
 ├── trust-conversion.html  # AI 建站付费体验设计复盘
 ├── css/
 │   ├── style.css           # 全局样式
-│   └── trust-conversion.css # 付费体验复盘补充样式
+│   ├── trust-conversion.css # 付费体验复盘补充样式
+│   └── resources.css       # 资源列表与筛选样式
 ├── js/
 │   ├── pages/             # 各页面交互逻辑
 │   │   ├── home.js
 │   │   ├── about.js
 │   │   ├── notes.js
 │   │   ├── design-challenge.js
-│   │   └── ai-design-evolution.js
+│   │   ├── ai-design-evolution.js
+│   │   ├── trust-conversion.js # 长文章节目录
+│   │   └── resources.js    # 资源筛选与平滑滚动
 │   └── shared/            # 跨页面共用交互
 │       ├── click-spark.js
+│       ├── site-nav.js
 │       └── site-footer.js
+├── tests/
+│   └── home-trail.test.cjs # 首页动效回归检查
 ├── tools/
 │   └── compress-images.py # 图片压缩工具（PNG/JPG → WebP）
 └── assets/
@@ -80,19 +88,11 @@ node --test tests/home-trail.test.cjs
 
 ## 🌐 部署
 
-### 部署到 Netlify（推荐，最快）
+当前使用 GitHub Pages：仓库为 `houshifang/shifang`，发布源为 `main` 分支根目录。推送到 `main` 后会自动执行 `pages build and deployment`，无需构建命令。
 
-1. 把项目推到 GitHub 仓库
-2. 登录 [Netlify](https://www.netlify.com/) → New site from Git → 选择仓库
-3. **Build command** 留空，**Publish directory** 填 `.`
-4. Deploy，几秒后拿到 `*.netlify.app` 域名
+线上地址：[https://houshifang.github.io/shifang/](https://houshifang.github.io/shifang/)。发布结果可在仓库的 Actions 中查看。
 
-### 部署到 GitHub Pages
-
-1. 仓库 Settings → Pages
-2. Source 选 `Deploy from a branch`
-3. Branch 选 `main` / `(root)`
-4. 几分钟后访问 `https://<你的用户名>.github.io/<仓库名>/`
+项目也可由任意静态托管服务运行，发布目录为根目录。`_headers` 是保留的 Netlify 缓存配置，GitHub Pages 不读取该文件。
 
 > ⚠️ **部署后建议**：把各个 HTML 页面中的 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/site/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
 

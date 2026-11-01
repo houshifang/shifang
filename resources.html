@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="author" content="仕方 Shifang">
+  <meta name="description" content="设计与开发资源目录，收集设计工程、AI、界面组件、工具和阅读资料。">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="资源 — 仕方">
+  <meta property="og:description" content="关于设计、技术与创造的个人收藏。">
+  <meta property="og:image" content="./assets/site/ico.png">
+  <title>资源 — 仕方</title>
+  <link rel="icon" type="image/png" href="./assets/site/ico.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/resources.css">
+  <script src="./assets/vendor/lenis.min.js" defer></script>
+  <script src="./js/pages/resources.js" defer></script>
+  <script src="./js/shared/site-nav.js" defer></script>
+  <script src="./js/shared/site-footer.js" defer></script>
+  <script src="./js/shared/click-spark.js" defer></script>
+</head>
+<body class="resources-page">
+  <div class="container">
+    <header class="header">
+      <div class="header-logo"><a href="index.html">仕方</a></div>
+      <nav class="nav" aria-label="主导航">
+        <a href="index.html#work">作品</a>
+        <a href="https://www.figma.com/proto/aO2AUhVDkXTRNBuerHVk2A/%E4%BE%AF%E4%BB%95%E6%96%B9-%E4%BD%9C%E5%93%81%E9%9B%86?node-id=1-254&amp;viewport=126%2C377%2C0.54&amp;t=DtWwvMKI6NjoDiW0-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1" target="_blank" rel="noopener noreferrer">作品集</a>
+        <a href="resources.html" aria-current="page">资源</a>
+        <a href="about.html">关于</a>
+        <a href="about.html#contact">联系</a>
+      </nav>
+      <div class="header-right">
+        <a href="https://x.com/faaaannng" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="header-social">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+          </svg>
+        </a>
+        <span class="header-year">©2026</span>
+      </div>
+    </header>
+    <main class="resources-main" id="main-content">
+      <header class="resources-intro">
+        <h1>资源</h1>
+        <p class="resources-subtitle">关于设计、技术与创造的个人收藏。</p>
+      </header>
+      <section aria-labelledby="resources-title">
+        <div class="resources-section-heading">
+          <h2 id="resources-title">浏览资源</h2>
+          <p id="resources-count" role="status" aria-live="polite" aria-atomic="true">共 111 个资源</p>
+        </div>
+        <div class="resources-controls" hidden>
+          <div class="resources-filters" role="group" aria-label="按资源用途筛选，可多选">
+            <button type="button" data-format="tools" aria-pressed="false" title="设计工具、组件、动效与开发辅助"><span class="resource-dot" aria-hidden="true"></span>工具</button>
+            <button type="button" data-format="inspiration" aria-pressed="false" title="设计案例、视觉参考与灵感目录"><span class="resource-dot" aria-hidden="true"></span>灵感</button>
+            <button type="button" data-format="learning" aria-pressed="false" title="文章、视频、课程与实践指南"><span class="resource-dot" aria-hidden="true"></span>学习</button>
+            <button type="button" data-format="industry" aria-pressed="false" title="设计师个人站、社区与职业机会"><span class="resource-dot" aria-hidden="true"></span>行业</button>
+          </div>
+          <button class="resources-reset" type="button" disabled>重置</button>
+        </div>
+        <ul class="resources-list" id="resources-list">
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://libraries.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Libraries.dev。用于创意界面的动效组件库，支持 AI 编码工具集成。（在新标签页打开）" title="Libraries.dev · 用于创意界面的动效组件库，支持 AI 编码工具集成。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Libraries.dev</strong><span class="resource-description"> · 用于创意界面的动效组件库，支持 AI 编码工具集成。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-11-02">2026.11.02</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://canvasui.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Canvas UI。基于 Canvas、WebGL 与 WebGPU 的创意动效组件库。（在新标签页打开）" title="Canvas UI · 基于 Canvas、WebGL 与 WebGPU 的创意动效组件库。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Canvas UI</strong><span class="resource-description"> · 基于 Canvas、WebGL 与 WebGPU 的创意动效组件库。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-11-02">2026.11.02</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.youtube.com/watch?v=cWggqwauYXQ" target="_blank" rel="noopener noreferrer" aria-label="学习：赞美暗黑模式｜Config 2026。Mehmet Aydın Baytaş 分享暗色界面设计。（在新标签页打开）" title="赞美暗黑模式｜Config 2026 · Mehmet Aydın Baytaş 分享暗色界面设计。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>赞美暗黑模式｜Config 2026</strong><span class="resource-description"> · Mehmet Aydın Baytaş 分享暗色界面设计。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-20">2026.10.20</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.youtube.com/watch?v=KZSzF0KEFRg" target="_blank" rel="noopener noreferrer" aria-label="学习：与 Maggie Appleton 谈设计工程。探讨设计师与设计工程师之间的经验交流。（在新标签页打开）" title="与 Maggie Appleton 谈设计工程 · 探讨设计师与设计工程师之间的经验交流。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>与 Maggie Appleton 谈设计工程</strong><span class="resource-description"> · 探讨设计师与设计工程师之间的经验交流。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-20">2026.10.20</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://designeer.xyz/" target="_blank" rel="noopener noreferrer" aria-label="灵感：Designeer。界面、组件和 AI 工具的资源索引。（在新标签页打开）" title="Designeer · 界面、组件和 AI 工具的资源索引。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Designeer</strong><span class="resource-description"> · 界面、组件和 AI 工具的资源索引。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-17">2026.10.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://mkdir.directory/" target="_blank" rel="noopener noreferrer" aria-label="灵感：mkdir。查找网页设计灵感网站。（在新标签页打开）" title="mkdir · 查找网页设计灵感网站。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>mkdir</strong><span class="resource-description"> · 查找网页设计灵感网站。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-17">2026.10.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://craft.gustavofior.com/" target="_blank" rel="noopener noreferrer" aria-label="学习：Craft。浏览设计工程相关概念。（在新标签页打开）" title="Craft · 浏览设计工程相关概念。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Craft</strong><span class="resource-description"> · 浏览设计工程相关概念。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-13">2026.10.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://rudyfaile.com/2026/09/24/the-age-of-the-soft-skill/" target="_blank" rel="noopener noreferrer" aria-label="学习：软技能的时代。关于工作中软技能的讨论。（在新标签页打开）" title="软技能的时代 · 关于工作中软技能的讨论。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>软技能的时代</strong><span class="resource-description"> · 关于工作中软技能的讨论。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-13">2026.10.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.tonyward.dev/articles/code-as-the-source-of-truth" target="_blank" rel="noopener noreferrer" aria-label="学习：代码作为事实来源。讨论 AI 工具与代码的关系。（在新标签页打开）" title="代码作为事实来源 · 讨论 AI 工具与代码的关系。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>代码作为事实来源</strong><span class="resource-description"> · 讨论 AI 工具与代码的关系。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-04">2026.10.04</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.youtube.com/watch?v=GLvFTMtw4Jk" target="_blank" rel="noopener noreferrer" aria-label="学习：用 AI 扩展意图、质量与艺术性。关于生成式 AI 与产品设计的演讲。（在新标签页打开）" title="用 AI 扩展意图、质量与艺术性 · 关于生成式 AI 与产品设计的演讲。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>用 AI 扩展意图、质量与艺术性</strong><span class="resource-description"> · 关于生成式 AI 与产品设计的演讲。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-04">2026.10.04</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://loading.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：loading.dev。React 加载指示器组件。（在新标签页打开）" title="loading.dev · React 加载指示器组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>loading.dev</strong><span class="resource-description"> · React 加载指示器组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-02">2026.10.02</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://gradientool.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：GRADIENTOOL。探索和生成渐变效果。（在新标签页打开）" title="GRADIENTOOL · 探索和生成渐变效果。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>GRADIENTOOL</strong><span class="resource-description"> · 探索和生成渐变效果。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-10-01">2026.10.01</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://uselayouts.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：useLayouts。浏览 React 布局与动效组件。（在新标签页打开）" title="useLayouts · 浏览 React 布局与动效组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>useLayouts</strong><span class="resource-description"> · 浏览 React 布局与动效组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-29">2026.09.29</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://corner-radii.xyz/" target="_blank" rel="noopener noreferrer" aria-label="工具：Corner Radii。计算嵌套容器的圆角。（在新标签页打开）" title="Corner Radii · 计算嵌套容器的圆角。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Corner Radii</strong><span class="resource-description"> · 计算嵌套容器的圆角。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-20">2026.09.20</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://lessons.design/" target="_blank" rel="noopener noreferrer" aria-label="学习：Lessons of Design。阅读设计实践与思考。（在新标签页打开）" title="Lessons of Design · 阅读设计实践与思考。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Lessons of Design</strong><span class="resource-description"> · 阅读设计实践与思考。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-16">2026.09.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://practicaltypography.com/" target="_blank" rel="noopener noreferrer" aria-label="学习：Butterick’s Practical Typography。系统学习实用排版。（在新标签页打开）" title="Butterick’s Practical Typography · 系统学习实用排版。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Butterick’s Practical Typography</strong><span class="resource-description"> · 系统学习实用排版。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-16">2026.09.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://design.lightspark.com/limit-the-number-of-details" target="_blank" rel="noopener noreferrer" aria-label="学习：限制细节数量。讨论界面细节与注意力的分配。（在新标签页打开）" title="限制细节数量 · 讨论界面细节与注意力的分配。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>限制细节数量</strong><span class="resource-description"> · 讨论界面细节与注意力的分配。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-16">2026.09.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://design.dev/ai/design-tokens-generator/" target="_blank" rel="noopener noreferrer" aria-label="工具：Design Tokens Generator。从颜色和设计文件生成设计变量。（在新标签页打开）" title="Design Tokens Generator · 从颜色和设计文件生成设计变量。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Tokens Generator</strong><span class="resource-description"> · 从颜色和设计文件生成设计变量。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-16">2026.09.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://chrisburnell.com/html-can-do-that/" target="_blank" rel="noopener noreferrer" aria-label="学习：HTML 也能做到这些。查看 HTML 原生能力的示例。（在新标签页打开）" title="HTML 也能做到这些 · 查看 HTML 原生能力的示例。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>HTML 也能做到这些</strong><span class="resource-description"> · 查看 HTML 原生能力的示例。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-14">2026.09.14</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://ref.tools/blog/how-i-design-with-ai" target="_blank" rel="noopener noreferrer" aria-label="学习：我如何用 AI 做设计。一位工程师的 AI 设计实践。（在新标签页打开）" title="我如何用 AI 做设计 · 一位工程师的 AI 设计实践。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>我如何用 AI 做设计</strong><span class="resource-description"> · 一位工程师的 AI 设计实践。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-13">2026.09.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://yeptype.com/article/inter-alternatives" target="_blank" rel="noopener noreferrer" aria-label="学习：Inter 的替代字体。了解 UI 字体的选择思路。（在新标签页打开）" title="Inter 的替代字体 · 了解 UI 字体的选择思路。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Inter 的替代字体</strong><span class="resource-description"> · 了解 UI 字体的选择思路。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-12">2026.09.12</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://ibelick.com/anatomy-ai-input" target="_blank" rel="noopener noreferrer" aria-label="学习：AI 输入框的结构。拆解 AI 产品的输入界面。（在新标签页打开）" title="AI 输入框的结构 · 拆解 AI 产品的输入界面。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>AI 输入框的结构</strong><span class="resource-description"> · 拆解 AI 产品的输入界面。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-12">2026.09.12</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://bencho.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Bencho。探索可交互的界面组件。（在新标签页打开）" title="Bencho · 探索可交互的界面组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Bencho</strong><span class="resource-description"> · 探索可交互的界面组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-11">2026.09.11</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://edoardolunardi.github.io/kugiri/" target="_blank" rel="noopener noreferrer" aria-label="工具：kugiri。按实际换行位置拆分文本。（在新标签页打开）" title="kugiri · 按实际换行位置拆分文本。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>kugiri</strong><span class="resource-description"> · 按实际换行位置拆分文本。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-07">2026.09.07</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://iim.smartsquad.io" target="_blank" rel="noopener noreferrer" aria-label="工具：Images in motion。构建多列循环图片动效。（在新标签页打开）" title="Images in motion · 构建多列循环图片动效。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Images in motion</strong><span class="resource-description"> · 构建多列循环图片动效。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-04">2026.09.04</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://shoogle.dev" target="_blank" rel="noopener noreferrer" aria-label="工具：Shoogle。搜索 shadcn 生态的组件和模板。（在新标签页打开）" title="Shoogle · 搜索 shadcn 生态的组件和模板。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Shoogle</strong><span class="resource-description"> · 搜索 shadcn 生态的组件和模板。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-04">2026.09.04</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://beautifului.dev" target="_blank" rel="noopener noreferrer" aria-label="工具：Beautiful UI。用于 AI 与智能体交互的界面组件。（在新标签页打开）" title="Beautiful UI · 用于 AI 与智能体交互的界面组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Beautiful UI</strong><span class="resource-description"> · 用于 AI 与智能体交互的界面组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-09-01">2026.09.01</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://dotmatrix.zzzzshawn.cloud" target="_blank" rel="noopener noreferrer" aria-label="工具：Dot Matrix。点阵风格的 React 加载组件。（在新标签页打开）" title="Dot Matrix · 点阵风格的 React 加载组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Dot Matrix</strong><span class="resource-description"> · 点阵风格的 React 加载组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-30">2026.08.30</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://aicss.dev" target="_blank" rel="noopener noreferrer" aria-label="工具：AICSS。AI 对话界面组件资源。（在新标签页打开）" title="AICSS · AI 对话界面组件资源。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>AICSS</strong><span class="resource-description"> · AI 对话界面组件资源。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-29">2026.08.29</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://shedsgns.me/taste" target="_blank" rel="noopener noreferrer" aria-label="学习：AI、系统、品味与人的判断。关于设计判断与 AI 协作的思考。（在新标签页打开）" title="AI、系统、品味与人的判断 · 关于设计判断与 AI 协作的思考。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>AI、系统、品味与人的判断</strong><span class="resource-description"> · 关于设计判断与 AI 协作的思考。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-28">2026.08.28</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://cuelume.dev" target="_blank" rel="noopener noreferrer" aria-label="工具：Cuelume。基于 Web Audio 的界面声音库。（在新标签页打开）" title="Cuelume · 基于 Web Audio 的界面声音库。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Cuelume</strong><span class="resource-description"> · 基于 Web Audio 的界面声音库。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-26">2026.08.26</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://youtu.be/uEMEs499fUs" target="_blank" rel="noopener noreferrer" aria-label="学习：设计工程的兴起。了解设计工程这一工作方向。（在新标签页打开）" title="设计工程的兴起 · 了解设计工程这一工作方向。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程的兴起</strong><span class="resource-description"> · 了解设计工程这一工作方向。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-26">2026.08.26</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://twilson.net/writing/ai-design-engineer" target="_blank" rel="noopener noreferrer" aria-label="学习：AI 会取代设计工程师吗？。讨论角色变化与仍然重要的能力。（在新标签页打开）" title="AI 会取代设计工程师吗？ · 讨论角色变化与仍然重要的能力。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>AI 会取代设计工程师吗？</strong><span class="resource-description"> · 讨论角色变化与仍然重要的能力。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-24">2026.08.24</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://ui.camera" target="_blank" rel="noopener noreferrer" aria-label="工具：UI Camera。为软件界面制作展示视觉。（在新标签页打开）" title="UI Camera · 为软件界面制作展示视觉。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>UI Camera</strong><span class="resource-description"> · 为软件界面制作展示视觉。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-22">2026.08.22</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://interfaces.dev/cheat-sheet" target="_blank" rel="noopener noreferrer" aria-label="学习：Interface Cheat Sheet。查阅界面设计与实现要点。（在新标签页打开）" title="Interface Cheat Sheet · 查阅界面设计与实现要点。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Interface Cheat Sheet</strong><span class="resource-description"> · 查阅界面设计与实现要点。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-21">2026.08.21</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://morphrig.dev" target="_blank" rel="noopener noreferrer" aria-label="学习：Morphrig。学习图标形变的实现原理。（在新标签页打开）" title="Morphrig · 学习图标形变的实现原理。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Morphrig</strong><span class="resource-description"> · 学习图标形变的实现原理。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-20">2026.08.20</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://uxdesign.cc/how-to-become-an-ai-designer-ff8ee8aed205" target="_blank" rel="noopener noreferrer" aria-label="学习：如何成为 AI 设计师。从设计想法走向实际交付。（在新标签页打开）" title="如何成为 AI 设计师 · 从设计想法走向实际交付。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>如何成为 AI 设计师</strong><span class="resource-description"> · 从设计想法走向实际交付。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-16">2026.08.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.morphicons.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：morphicons。带弹簧效果的 SVG 图标形变。（在新标签页打开）" title="morphicons · 带弹簧效果的 SVG 图标形变。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>morphicons</strong><span class="resource-description"> · 带弹簧效果的 SVG 图标形变。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-16">2026.08.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.interior.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：interior.dev。用于 React 的微交互组件。（在新标签页打开）" title="interior.dev · 用于 React 的微交互组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>interior.dev</strong><span class="resource-description"> · 用于 React 的微交互组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-13">2026.08.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://glass.samasante.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：liquid-glass。为 React 界面添加折射玻璃效果。（在新标签页打开）" title="liquid-glass · 为 React 界面添加折射玻璃效果。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>liquid-glass</strong><span class="resource-description"> · 为 React 界面添加折射玻璃效果。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-11">2026.08.11</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://crd-ui.juanda.co/" target="_blank" rel="noopener noreferrer" aria-label="工具：crd-ui。信用卡与借记卡表单组件。（在新标签页打开）" title="crd-ui · 信用卡与借记卡表单组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>crd-ui</strong><span class="resource-description"> · 信用卡与借记卡表单组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-05">2026.08.05</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.fluidfunctionalism.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Fluid Functionalism。开源的 React 界面组件。（在新标签页打开）" title="Fluid Functionalism · 开源的 React 界面组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Fluid Functionalism</strong><span class="resource-description"> · 开源的 React 界面组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-08-05">2026.08.05</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://github.com/jakubkrehel/skills" target="_blank" rel="noopener noreferrer" aria-label="工具：jakubkrehel/skills。面向界面设计与实现的智能体技能。（在新标签页打开）" title="jakubkrehel/skills · 面向界面设计与实现的智能体技能。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>jakubkrehel/skills</strong><span class="resource-description"> · 面向界面设计与实现的智能体技能。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-15">2026.07.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.tripwire.sh/dither-kit" target="_blank" rel="noopener noreferrer" aria-label="工具：dither-kit。抖色风格图表组件。（在新标签页打开）" title="dither-kit · 抖色风格图表组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>dither-kit</strong><span class="resource-description"> · 抖色风格图表组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-13">2026.07.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://abtest.design/" target="_blank" rel="noopener noreferrer" aria-label="灵感：abtest.design。浏览产品 A/B 测试案例。（在新标签页打开）" title="abtest.design · 浏览产品 A/B 测试案例。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>abtest.design</strong><span class="resource-description"> · 浏览产品 A/B 测试案例。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-13">2026.07.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.agentation.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Agentation。向智能体提供可视化界面反馈。（在新标签页打开）" title="Agentation · 向智能体提供可视化界面反馈。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Agentation</strong><span class="resource-description"> · 向智能体提供可视化界面反馈。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-13">2026.07.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://zed.dev/jobs/product-designer" target="_blank" rel="noopener noreferrer" aria-label="行业：Zed。产品设计工程相关职位。（在新标签页打开）" title="Zed · 产品设计工程相关职位。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Zed</strong><span class="resource-description"> · 产品设计工程相关职位。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-13">2026.07.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://github.com/emilkowalski/skills" target="_blank" rel="noopener noreferrer" aria-label="工具：emilkowalski/skills。面向设计工程的智能体技能。（在新标签页打开）" title="emilkowalski/skills · 面向设计工程的智能体技能。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>emilkowalski/skills</strong><span class="resource-description"> · 面向设计工程的智能体技能。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-12">2026.07.12</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://number-flow.barvian.me/" target="_blank" rel="noopener noreferrer" aria-label="工具：NumberFlow。为数字变化添加过渡动画。（在新标签页打开）" title="NumberFlow · 为数字变化添加过渡动画。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>NumberFlow</strong><span class="resource-description"> · 为数字变化添加过渡动画。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-09">2026.07.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://emilkowal.ski/ui/you-dont-need-animations" target="_blank" rel="noopener noreferrer" aria-label="学习：你不总是需要动画。思考动画在界面中的使用时机。（在新标签页打开）" title="你不总是需要动画 · 思考动画在界面中的使用时机。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>你不总是需要动画</strong><span class="resource-description"> · 思考动画在界面中的使用时机。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-08">2026.07.08</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://magicui.design/" target="_blank" rel="noopener noreferrer" aria-label="工具：Magic UI。用于网页搭建的动效组件。（在新标签页打开）" title="Magic UI · 用于网页搭建的动效组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Magic UI</strong><span class="resource-description"> · 用于网页搭建的动效组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-07-01">2026.07.01</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://designspells.com" target="_blank" rel="noopener noreferrer" aria-label="灵感：Design Spells。观察网站中的微交互与细节。（在新标签页打开）" title="Design Spells · 观察网站中的微交互与细节。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Spells</strong><span class="resource-description"> · 观察网站中的微交互与细节。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-18">2026.05.18</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://designsystems.surf/" target="_blank" rel="noopener noreferrer" aria-label="灵感：Design Systems Surf。浏览设计系统与组件规范。（在新标签页打开）" title="Design Systems Surf · 浏览设计系统与组件规范。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Systems Surf</strong><span class="resource-description"> · 浏览设计系统与组件规范。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-16">2026.05.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://audio.raphaelsalaja.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：@web-kits/audio。声明式 Web 音频合成工具。（在新标签页打开）" title="@web-kits/audio · 声明式 Web 音频合成工具。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>@web-kits/audio</strong><span class="resource-description"> · 声明式 Web 音频合成工具。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-16">2026.05.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://gradient-border.floriankiem.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Gradient Border Plugin。为 Tailwind 添加渐变边框。（在新标签页打开）" title="Gradient Border Plugin · 为 Tailwind 添加渐变边框。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Gradient Border Plugin</strong><span class="resource-description"> · 为 Tailwind 添加渐变边框。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-15">2026.05.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/" target="_blank" rel="noopener noreferrer" aria-label="学习：前端中的设计与工程分工。讨论前端开发的不同侧重。（在新标签页打开）" title="前端中的设计与工程分工 · 讨论前端开发的不同侧重。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>前端中的设计与工程分工</strong><span class="resource-description"> · 讨论前端开发的不同侧重。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-15">2026.05.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.tasteskill.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Taste Skill。辅助 AI 编码工具进行界面设计。（在新标签页打开）" title="Taste Skill · 辅助 AI 编码工具进行界面设计。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Taste Skill</strong><span class="resource-description"> · 辅助 AI 编码工具进行界面设计。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-14">2026.05.14</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.raphaelsalaja.com/library/the-concept-of-taste" target="_blank" rel="noopener noreferrer" aria-label="学习：品味的概念。关于审美判断的讨论。（在新标签页打开）" title="品味的概念 · 关于审美判断的讨论。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>品味的概念</strong><span class="resource-description"> · 关于审美判断的讨论。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-13">2026.05.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://didoesdigital.com/project/design-for-engineers/" target="_blank" rel="noopener noreferrer" aria-label="学习：Design for Engineers。连接设计与代码的实践资源。（在新标签页打开）" title="Design for Engineers · 连接设计与代码的实践资源。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design for Engineers</strong><span class="resource-description"> · 连接设计与代码的实践资源。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-13">2026.05.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://jakub.kr/" target="_blank" rel="noopener noreferrer" aria-label="行业：Jakub Krehel。设计工程师的个人网站。（在新标签页打开）" title="Jakub Krehel · 设计工程师的个人网站。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Jakub Krehel</strong><span class="resource-description"> · 设计工程师的个人网站。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-13">2026.05.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://interfaces.dev/" target="_blank" rel="noopener noreferrer" aria-label="学习：Interfaces。设计工程主题杂志。（在新标签页打开）" title="Interfaces · 设计工程主题杂志。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Interfaces</strong><span class="resource-description"> · 设计工程主题杂志。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-13">2026.05.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.hashvatar.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Hashvatar。根据文本生成一致的头像。（在新标签页打开）" title="Hashvatar · 根据文本生成一致的头像。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Hashvatar</strong><span class="resource-description"> · 根据文本生成一致的头像。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-13">2026.05.13</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.remediate.ski/" target="_blank" rel="noopener noreferrer" aria-label="工具：Remediate。在应用内收集界面反馈。（在新标签页打开）" title="Remediate · 在应用内收集界面反馈。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Remediate</strong><span class="resource-description"> · 在应用内收集界面反馈。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-04">2026.05.04</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://transitions.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Transitions.dev。浏览常见的网页过渡效果。（在新标签页打开）" title="Transitions.dev · 浏览常见的网页过渡效果。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Transitions.dev</strong><span class="resource-description"> · 浏览常见的网页过渡效果。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-05-02">2026.05.02</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://devl.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：devl.dev。React 界面实验与组件。（在新标签页打开）" title="devl.dev · React 界面实验与组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>devl.dev</strong><span class="resource-description"> · React 界面实验与组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-04-27">2026.04.27</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://ui.land/" target="_blank" rel="noopener noreferrer" aria-label="灵感：ui.land。设计与工程资源目录。（在新标签页打开）" title="ui.land · 设计与工程资源目录。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>ui.land</strong><span class="resource-description"> · 设计与工程资源目录。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-04-16">2026.04.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://jakub.kr/work/using-ai-as-a-design-engineer" target="_blank" rel="noopener noreferrer" aria-label="学习：设计工程师如何使用 AI。了解日常工作中的 AI 实践。（在新标签页打开）" title="设计工程师如何使用 AI · 了解日常工作中的 AI 实践。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程师如何使用 AI</strong><span class="resource-description"> · 了解日常工作中的 AI 实践。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-04-05">2026.04.05</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://torph.lochie.me/" target="_blank" rel="noopener noreferrer" aria-label="工具：Torph。文本过渡动画组件。（在新标签页打开）" title="Torph · 文本过渡动画组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Torph</strong><span class="resource-description"> · 文本过渡动画组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-04-03">2026.04.03</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://shadowlab.mocarski.design/" target="_blank" rel="noopener noreferrer" aria-label="工具：shadowLab。调试网页和 React Native 阴影。（在新标签页打开）" title="shadowLab · 调试网页和 React Native 阴影。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>shadowLab</strong><span class="resource-description"> · 调试网页和 React Native 阴影。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-27">2026.03.27</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.ui-skills.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：UI Skills。用于改善界面的智能体技能。（在新标签页打开）" title="UI Skills · 用于改善界面的智能体技能。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>UI Skills</strong><span class="resource-description"> · 用于改善界面的智能体技能。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-24">2026.03.24</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://maggieappleton.com/design-engineers" target="_blank" rel="noopener noreferrer" aria-label="行业：设计工程师集合。了解在设计与代码之间工作的人。（在新标签页打开）" title="设计工程师集合 · 了解在设计与代码之间工作的人。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程师集合</strong><span class="resource-description"> · 了解在设计与代码之间工作的人。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-24">2026.03.24</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.rams.ai/" target="_blank" rel="noopener noreferrer" aria-label="工具：rams。辅助检查 AI 生成的界面代码。（在新标签页打开）" title="rams · 辅助检查 AI 生成的界面代码。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>rams</strong><span class="resource-description"> · 辅助检查 AI 生成的界面代码。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-21">2026.03.21</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://principles.design/" target="_blank" rel="noopener noreferrer" aria-label="学习：Design Principles。查找设计原则与实践参考。（在新标签页打开）" title="Design Principles · 查找设计原则与实践参考。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Principles</strong><span class="resource-description"> · 查找设计原则与实践参考。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-18">2026.03.18</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.fancycomponents.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Fancy Components。可用于 React 的界面组件。（在新标签页打开）" title="Fancy Components · 可用于 React 的界面组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Fancy Components</strong><span class="resource-description"> · 可用于 React 的界面组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-18">2026.03.18</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.designsystemchecklist.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Design System Checklist。检查设计系统的规划与建设。（在新标签页打开）" title="Design System Checklist · 检查设计系统的规划与建设。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design System Checklist</strong><span class="resource-description"> · 检查设计系统的规划与建设。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-17">2026.03.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://lawsofux.com/" target="_blank" rel="noopener noreferrer" aria-label="学习：Laws of UX。查阅用户体验相关原则。（在新标签页打开）" title="Laws of UX · 查阅用户体验相关原则。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Laws of UX</strong><span class="resource-description"> · 查阅用户体验相关原则。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-17">2026.03.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://impeccable.style/" target="_blank" rel="noopener noreferrer" aria-label="工具：Impeccable。用于改善前端界面的智能体技能。（在新标签页打开）" title="Impeccable · 用于改善前端界面的智能体技能。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Impeccable</strong><span class="resource-description"> · 用于改善前端界面的智能体技能。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-17">2026.03.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://joshpuckett.me/dialkit" target="_blank" rel="noopener noreferrer" aria-label="工具：DialKit。通过控制面板调试界面参数。（在新标签页打开）" title="DialKit · 通过控制面板调试界面参数。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>DialKit</strong><span class="resource-description"> · 通过控制面板调试界面参数。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-17">2026.03.17</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://jakub.kr/writing/details-that-make-interfaces-feel-better" target="_blank" rel="noopener noreferrer" aria-label="学习：让界面更好的细节。阅读界面细节的实践建议。（在新标签页打开）" title="让界面更好的细节 · 阅读界面细节的实践建议。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>让界面更好的细节</strong><span class="resource-description"> · 阅读界面细节的实践建议。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-16">2026.03.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://calligraph.raphaelsalaja.com/" target="_blank" rel="noopener noreferrer" aria-label="工具：Calligraph。基于 Motion 的文本过渡组件。（在新标签页打开）" title="Calligraph · 基于 Motion 的文本过渡组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Calligraph</strong><span class="resource-description"> · 基于 Motion 的文本过渡组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-16">2026.03.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.ryngonzalez.com/blog/the-attributes-of-a-design-engineer" target="_blank" rel="noopener noreferrer" aria-label="学习：设计工程师的特质。了解设计工程的工作方式。（在新标签页打开）" title="设计工程师的特质 · 了解设计工程的工作方式。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程师的特质</strong><span class="resource-description"> · 了解设计工程的工作方式。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-16">2026.03.16</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://www.easing.dev/" target="_blank" rel="noopener noreferrer" aria-label="工具：Easing Graphs。查看缓动曲线。（在新标签页打开）" title="Easing Graphs · 查看缓动曲线。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Easing Graphs</strong><span class="resource-description"> · 查看缓动曲线。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-15">2026.03.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://www.floguo.com/" target="_blank" rel="noopener noreferrer" aria-label="行业：floguo。设计工程师的个人网站。（在新标签页打开）" title="floguo · 设计工程师的个人网站。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>floguo</strong><span class="resource-description"> · 设计工程师的个人网站。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-15">2026.03.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.floguo.com/notes/design-engineering" target="_blank" rel="noopener noreferrer" aria-label="学习：Design Engineering。关于设计工程的链接与观察。（在新标签页打开）" title="Design Engineering · 关于设计工程的链接与观察。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Engineering</strong><span class="resource-description"> · 关于设计工程的链接与观察。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-15">2026.03.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://marcel.io/posts/becoming-a-design-engineer" target="_blank" rel="noopener noreferrer" aria-label="学习：成为设计工程师。分享设计与工程方向的成长经历。（在新标签页打开）" title="成为设计工程师 · 分享设计与工程方向的成长经历。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>成为设计工程师</strong><span class="resource-description"> · 分享设计与工程方向的成长经历。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-15">2026.03.15</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://designengineer.tools/" target="_blank" rel="noopener noreferrer" aria-label="工具：Design Engineer Tools。查找设计工程工作中的工具。（在新标签页打开）" title="Design Engineer Tools · 查找设计工程工作中的工具。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Engineer Tools</strong><span class="resource-description"> · 查找设计工程工作中的工具。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-14">2026.03.14</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://userinterface.wiki/" target="_blank" rel="noopener noreferrer" aria-label="学习：userinterface.wiki。学习界面设计与实现。（在新标签页打开）" title="userinterface.wiki · 学习界面设计与实现。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>userinterface.wiki</strong><span class="resource-description"> · 学习界面设计与实现。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-14">2026.03.14</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://oklch.fyi/" target="_blank" rel="noopener noreferrer" aria-label="工具：OKLCH.fyi。转换和探索 OKLCH 颜色。（在新标签页打开）" title="OKLCH.fyi · 转换和探索 OKLCH 颜色。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>OKLCH.fyi</strong><span class="resource-description"> · 转换和探索 OKLCH 颜色。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-11">2026.03.11</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="inspiration">
+            <a class="resource-link" href="https://component.gallery/" target="_blank" rel="noopener noreferrer" aria-label="灵感：The Component Gallery。比较不同设计系统中的组件。（在新标签页打开）" title="The Component Gallery · 比较不同设计系统中的组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>The Component Gallery</strong><span class="resource-description"> · 比较不同设计系统中的组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-10">2026.03.10</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.interfacecraft.dev/" target="_blank" rel="noopener noreferrer" aria-label="学习：Interface Craft。学习界面制作的方法。（在新标签页打开）" title="Interface Craft · 学习界面制作的方法。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Interface Craft</strong><span class="resource-description"> · 学习界面制作的方法。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-10">2026.03.10</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://rauno.me/craft/interaction-design" target="_blank" rel="noopener noreferrer" aria-label="学习：交互设计中看不见的细节。探索交互体验背后的实现。（在新标签页打开）" title="交互设计中看不见的细节 · 探索交互体验背后的实现。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>交互设计中看不见的细节</strong><span class="resource-description"> · 探索交互体验背后的实现。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-10">2026.03.10</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.svg.guide/" target="_blank" rel="noopener noreferrer" aria-label="学习：Interactive SVG Animations。学习 SVG 动画。（在新标签页打开）" title="Interactive SVG Animations · 学习 SVG 动画。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Interactive SVG Animations</strong><span class="resource-description"> · 学习 SVG 动画。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-10">2026.03.10</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://github.com/benjitaylor/liveline" target="_blank" rel="noopener noreferrer" aria-label="工具：Liveline。React 实时动态折线图。（在新标签页打开）" title="Liveline · React 实时动态折线图。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Liveline</strong><span class="resource-description"> · React 实时动态折线图。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://benji.org/family-values" target="_blank" rel="noopener noreferrer" aria-label="学习：Family Values。了解 Family 的产品设计思路。（在新标签页打开）" title="Family Values · 了解 Family 的产品设计思路。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Family Values</strong><span class="resource-description"> · 了解 Family 的产品设计思路。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://devouringdetails.com/" target="_blank" rel="noopener noreferrer" aria-label="学习：Devouring Details。交互细节学习手册。（在新标签页打开）" title="Devouring Details · 交互细节学习手册。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Devouring Details</strong><span class="resource-description"> · 交互细节学习手册。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://uiplaybook.dev/" target="_blank" rel="noopener noreferrer" aria-label="学习：UI Playbook。查阅界面组件文档。（在新标签页打开）" title="UI Playbook · 查阅界面组件文档。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>UI Playbook</strong><span class="resource-description"> · 查阅界面组件文档。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://github.com/dip/cmdk" target="_blank" rel="noopener noreferrer" aria-label="工具：⌘K。React 命令菜单组件。（在新标签页打开）" title="⌘K · React 命令菜单组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>⌘K</strong><span class="resource-description"> · React 命令菜单组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://interfaces.rauno.me/" target="_blank" rel="noopener noreferrer" aria-label="学习：Web Interface Guidelines。网页界面的设计与实现要点。（在新标签页打开）" title="Web Interface Guidelines · 网页界面的设计与实现要点。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Web Interface Guidelines</strong><span class="resource-description"> · 网页界面的设计与实现要点。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-09">2026.03.09</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://designengineer.io/" target="_blank" rel="noopener noreferrer" aria-label="行业：Design Engineer Jobs。查找设计工程相关职位。（在新标签页打开）" title="Design Engineer Jobs · 查找设计工程相关职位。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Engineer Jobs</strong><span class="resource-description"> · 查找设计工程相关职位。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-08">2026.03.08</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://soundcn.xyz/" target="_blank" rel="noopener noreferrer" aria-label="工具：soundcn。浏览界面音效资源。（在新标签页打开）" title="soundcn · 浏览界面音效资源。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>soundcn</strong><span class="resource-description"> · 浏览界面音效资源。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-08">2026.03.08</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://blog.designeng.club/p/design-engineering-a-state-of-mind" target="_blank" rel="noopener noreferrer" aria-label="学习：设计工程：一种思维方式。关于连接设计、代码与产品的经历。（在新标签页打开）" title="设计工程：一种思维方式 · 关于连接设计、代码与产品的经历。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程：一种思维方式</strong><span class="resource-description"> · 关于连接设计、代码与产品的经历。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-08">2026.03.08</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://designeng.club/" target="_blank" rel="noopener noreferrer" aria-label="行业：Design Engineering Club。设计工程主题社区。（在新标签页打开）" title="Design Engineering Club · 设计工程主题社区。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Design Engineering Club</strong><span class="resource-description"> · 设计工程主题社区。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-08">2026.03.08</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://haptics.lochie.me" target="_blank" rel="noopener noreferrer" aria-label="工具：WebHaptics。为移动网页添加触觉反馈。（在新标签页打开）" title="WebHaptics · 为移动网页添加触觉反馈。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>WebHaptics</strong><span class="resource-description"> · 为移动网页添加触觉反馈。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-07">2026.03.07</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.designdisciplin.com/p/design-engineering-101" target="_blank" rel="noopener noreferrer" aria-label="学习：设计工程入门。了解相关岗位和技能。（在新标签页打开）" title="设计工程入门 · 了解相关岗位和技能。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>设计工程入门</strong><span class="resource-description"> · 了解相关岗位和技能。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-07">2026.03.07</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://rauno.me/" target="_blank" rel="noopener noreferrer" aria-label="行业：Rauno Freiberg。设计工程师的个人网站。（在新标签页打开）" title="Rauno Freiberg · 设计工程师的个人网站。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Rauno Freiberg</strong><span class="resource-description"> · 设计工程师的个人网站。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-07">2026.03.07</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="tools">
+            <a class="resource-link" href="https://sonner.emilkowal.ski/" target="_blank" rel="noopener noreferrer" aria-label="工具：Sonner。React 消息提示组件。（在新标签页打开）" title="Sonner · React 消息提示组件。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Sonner</strong><span class="resource-description"> · React 消息提示组件。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-06">2026.03.06</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="industry">
+            <a class="resource-link" href="https://emilkowal.ski/" target="_blank" rel="noopener noreferrer" aria-label="行业：Emil Kowalski。设计工程师的个人网站。（在新标签页打开）" title="Emil Kowalski · 设计工程师的个人网站。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Emil Kowalski</strong><span class="resource-description"> · 设计工程师的个人网站。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-06">2026.03.06</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://animations.dev" target="_blank" rel="noopener noreferrer" aria-label="学习：animations.dev。学习网页动画。（在新标签页打开）" title="animations.dev · 学习网页动画。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>animations.dev</strong><span class="resource-description"> · 学习网页动画。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-06">2026.03.06</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://www.raphaelsalaja.com/library/12-principles-of-animation" target="_blank" rel="noopener noreferrer" aria-label="学习：动画的十二条原则。了解动画的基础原则。（在新标签页打开）" title="动画的十二条原则 · 了解动画的基础原则。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>动画的十二条原则</strong><span class="resource-description"> · 了解动画的基础原则。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-05">2026.03.05</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://emilkowal.ski/ui/developing-taste" target="_blank" rel="noopener noreferrer" aria-label="学习：培养品味。关于审美判断的形成。（在新标签页打开）" title="培养品味 · 关于审美判断的形成。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>培养品味</strong><span class="resource-description"> · 关于审美判断的形成。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-05">2026.03.05</time>
+            </a>
+          </li>
+          <li class="resource-item" data-format="learning">
+            <a class="resource-link" href="https://vercel.com/blog/design-engineering-at-vercel" target="_blank" rel="noopener noreferrer" aria-label="学习：Vercel 的设计工程。了解 Vercel 的设计工程实践。（在新标签页打开）" title="Vercel 的设计工程 · 了解 Vercel 的设计工程实践。">
+              <span class="resource-dot" aria-hidden="true"></span>
+              <span class="resource-copy"><strong>Vercel 的设计工程</strong><span class="resource-description"> · 了解 Vercel 的设计工程实践。</span></span>
+              <span class="resource-leader" aria-hidden="true"></span>
+              <time datetime="2026-03-04">2026.03.04</time>
+            </a>
+          </li>
+        </ul>
+        <div class="resources-empty" hidden>
+          <h3>没有找到匹配的资源</h3>
+          <p>试试其他分类，或重置筛选。</p>
+          <button type="button">重置筛选</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <site-footer></site-footer>
+  <click-spark></click-spark>
+</body>
+</html>

@@ -14,7 +14,7 @@
       const targetPage = pageName(target.pathname);
       const active = page === 'about.html'
         ? targetPage === 'about.html' && (isContact ? target.hash === '#contact' : !target.hash)
-        : workPages.has(page) && targetPage === 'index.html';
+        : workPages.has(page) ? targetPage === 'index.html' : targetPage === page && !target.hash;
       if (active) link.setAttribute('aria-current', isContact ? 'location' : 'page');
       else link.removeAttribute('aria-current');
     });
