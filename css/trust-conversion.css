@@ -1,23 +1,25 @@
 /* 付费体验项目：复用审美复盘页的长文、摘要与卡片样式。 */
 .trust-page { --trust-accent: #ff9ac8; }
 .trust-page .notes-title { max-width: 12em; }
-.trust-page:not(.payment-preview) .notes-title { max-width: none; }
+.trust-page:not(.payment-preview) .notes-title { max-width: none; font-size: clamp(2.5rem, 5.6vw, 4rem); }
 .trust-page:not(.payment-preview) .notes-intro { margin: 0 auto 3rem; }
+.trust-page .quality-meta span { padding-inline: 1.25rem; }
 .trust-page:not(.payment-preview) .quality-article,
 .trust-page:not(.payment-preview) .quality-footer { margin-left: auto; margin-right: auto; }
 .trust-page:not(.payment-preview) .quality-article > .quality-section:first-child { padding-top: 0; }
+.trust-page #overview .quality-summary { grid-template-columns: 1fr; }
 
 /* 目录使用正文外的留白，保留原有阅读宽度。 */
 .trust-reading-layout { position: relative; width: 100%; max-width: 58rem; margin-inline: auto; }
-.trust-toc-rail { position: absolute; inset: 0 auto 0 calc(100% + 2.5rem); width: 9rem; }
+.trust-toc-rail { position: absolute; inset: 0 auto 0 calc(100% + 4rem); width: 9rem; }
 .trust-toc { position: sticky; top: 7rem; max-height: calc(100dvh - 8rem); overflow-y: auto; scrollbar-width: thin; }
 .trust-toc-details > summary { display: none; }
 .trust-toc-heading { margin: 0 0 1rem; padding-left: 1rem; color: #999; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.08em; }
 .trust-toc-list { margin: 0; padding: 0; list-style: none; }
-.trust-toc-list a { display: flex; align-items: center; gap: 0.65rem; min-height: 2.75rem; padding: 0.5rem 0.75rem 0.5rem 1rem; border-left: 2px solid #242424; color: #a3a3a3; font-size: 0.8125rem; line-height: 1.5; text-decoration: none; }
+.trust-toc-list a { display: flex; align-items: center; gap: 0.65rem; min-height: 2.25rem; padding: 0.375rem 0.75rem 0.375rem 1rem; border-left: 2px solid #242424; color: #a3a3a3; font-size: 0.8125rem; line-height: 1.5; text-decoration: none; }
 .trust-toc-list a > span { color: #888; font-size: 0.6875rem; font-variant-numeric: tabular-nums; }
 .trust-toc-list a:hover { color: #fff; }
-.trust-toc-list a[aria-current="location"] { border-left-color: var(--trust-accent); color: var(--trust-accent); font-weight: 500; }
+.trust-toc-list a[aria-current="location"] { border-left-color: #fff; color: #fff; font-weight: 500; }
 .trust-toc-list a[aria-current="location"] > span { color: inherit; }
 .trust-toc-list a:focus-visible { outline-offset: -2px; }
 @media (max-width: 85.999rem) {
@@ -60,7 +62,7 @@
 .trust-service-path td:not(:last-child)::after { content: '→'; position: absolute; top: 50%; right: -0.6rem; z-index: 1; width: 1.2rem; transform: translateY(-50%); background: #111; color: #888; font-size: var(--trust-size-caption); line-height: 1.5; }
 .trust-action { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #242424; }
 .trust-action .trust-subheading { display: flex; align-items: flex-start; gap: 0.65rem; margin-top: 0; }
-.trust-action-icon { flex: 0 0 auto; width: 1.35rem; height: 1.35rem; margin-top: 0.15rem; color: var(--trust-accent); }
+.trust-action-icon { flex: 0 0 auto; width: 1.35rem; height: 1.35rem; margin-top: 0.15rem; color: #ddd; }
 .trust-action-problem { margin-top: 1rem; color: #aaa; font-size: 0.8rem; line-height: 1.8; }
 .trust-solution-figure { margin: 1.5rem 0 0; }
 .trust-solution-figure img { display: block; width: 100%; height: auto; border-radius: var(--trust-panel-radius); }
@@ -229,7 +231,7 @@
 .trust-page:not(.payment-preview) #challenge .trust-challenge-evidence > figure { margin: 0; }
 .trust-page:not(.payment-preview) #challenge .trust-flow li { padding-top: 1.25rem; padding-bottom: 1.25rem; }
 .trust-page:not(.payment-preview) #challenge .trust-caption { margin-top: 0.75rem; }
-.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion { margin-top: var(--trust-space-group); padding-top: var(--trust-space-block); border-top: 1px solid #242424; }
+.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion { margin-top: var(--trust-space-group); padding-top: var(--trust-space-block); }
 .trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion h3 { margin-top: 0; margin-bottom: var(--trust-space-heading); }
 
 /* 旧流程的静态模拟聊天；付款样式仅为预览内容。 */
@@ -280,7 +282,7 @@
 .trust-research-patterns dt { color: #eee; font-weight: 500; }
 .trust-research-patterns dd { margin: 0; color: #bbb; }
 .trust-research-takeaway { border-left-width: 3px; }
-.trust-research-takeaway > span { padding: 0.3em 0.15em; background: var(--trust-accent); color: #141014; line-height: 2.2; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.trust-research-takeaway > span { padding: 0.3em 0.15em; line-height: 2.2; }
 @media (max-width: 768px) {
   .trust-principles--detailed .trust-trait-card { grid-template-columns: 1fr; gap: 1.25rem; }
   .trust-research-patterns > div { grid-template-columns: 1fr; gap: 0.4rem; }
