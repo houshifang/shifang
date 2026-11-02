@@ -34,7 +34,6 @@
   .trust-toc-list a { min-height: 2.75rem; padding-left: 0.75rem; }
   .trust-page .trust-reading-layout section[id] { scroll-margin-top: 9.5rem; }
 }
-.trust-subtitle { margin-top: 1.4rem; font-size: clamp(1.05rem, 2vw, 1.4rem); font-weight: 400; line-height: 1.6; color: #d6d6d6; }
 .trust-subheading { margin: 2.5rem 0 1rem; color: #eee; font-size: 1.05rem; font-weight: 500; line-height: 1.7; }
 .trust-caption { margin-top: 1rem; color: #a3a3a3; font-size: 0.75rem; line-height: 1.8; }
 .trust-roadmap-section { margin-top: 3rem; }
@@ -52,7 +51,6 @@
 .trust-principles { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
 .trust-principles .quality-insight-card { padding: 1.5rem; }
 .trust-principles .quality-insight-card p { color: #aaa; }
-.trust-principles .quality-insight-card .trust-principle-voice { margin-bottom: 0.75rem; color: #ddd; }
 .trust-service-path-wrap { margin-top: 1.25rem; overflow-x: auto; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); background: #111; scrollbar-width: thin; }
 .trust-service-path-wrap:focus-visible { outline: 2px solid var(--trust-accent); outline-offset: 4px; }
 .trust-service-path { width: 100%; min-width: 49rem; table-layout: fixed; border-collapse: separate; border-spacing: 0; }

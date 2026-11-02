@@ -10,12 +10,12 @@
 - **关于 (`about.html`)** — 履历、技能、联系方式
 - **资源 (`resources.html`)** — 111 个设计与开发收藏，按工具、灵感、学习、行业四类组织，支持多选筛选
 - **随手记 (`notes.html`)** — 关于设计、AI 与生活的零散思考
-- **设计打卡挑战 (`design-challenge.html`)** — 50 天设计打卡作品墙
+- **设计打卡挑战 (`design-challenge.html`)** — 带全站导航的全屏循环画廊，支持拖拽惯性与图片展开预览
 
 ## 🛠 技术栈
 
 - 纯 HTML / CSS / JavaScript，无构建工具
-- [GSAP](https://gsap.com/) — 入场动画 / 拖尾动画
+- [GSAP](https://gsap.com/) — 入场动画 / 拖尾动画 / 画廊预览过渡
 - [Lenis](https://github.com/darkroomengineering/lenis) — 平滑滚动
 - 第三方库保存在 `assets/vendor/`，页面可直接本地运行
 
@@ -27,11 +27,12 @@
 ├── about.html              # 关于
 ├── notes.html              # 随手记
 ├── resources.html          # 资源收藏
-├── design-challenge.html   # 设计打卡详情
+├── design-challenge.html   # 全屏设计画廊，保留原页面地址
 ├── ai-design-evolution.html # AI 审美进化复盘
 ├── trust-conversion.html  # AI 建站付费体验设计复盘
 ├── css/
 │   ├── style.css           # 全局样式
+│   ├── design-challenge.css # 画廊布局与导航适配
 │   ├── trust-conversion.css # 付费体验复盘补充样式
 │   └── resources.css       # 资源列表与筛选样式
 ├── js/
@@ -39,7 +40,8 @@
 │   │   ├── home.js
 │   │   ├── about.js
 │   │   ├── notes.js
-│   │   ├── design-challenge.js
+│   │   ├── design-challenge.js # 画廊拖拽、缩放与预览动画
+│   │   ├── design-challenge-geometry.js # 循环网格与惯性计算
 │   │   ├── ai-design-evolution.js
 │   │   ├── trust-conversion.js # 长文章节目录
 │   │   └── resources.js    # 资源筛选与平滑滚动
@@ -48,7 +50,8 @@
 │       ├── site-nav.js
 │       └── site-footer.js
 ├── tests/
-│   └── home-trail.test.cjs # 首页动效回归检查
+│   ├── home-trail.test.cjs # 首页动效回归检查
+│   └── design-challenge-geometry.test.cjs # 画廊几何与惯性检查
 ├── tools/
 │   └── compress-images.py # 图片压缩工具（PNG/JPG → WebP）
 └── assets/
@@ -84,7 +87,24 @@ npx serve .
 node --test tests/home-trail.test.cjs
 ```
 
-覆盖图片慢加载、加载失败、快速移动连续出图、独立节点清理、页面返回与减少动态效果偏好。首页脚本与拖尾图片使用带版本的 URL，Netlify 的浏览器缓存规则位于 `_headers`。更换拖尾图片时，需要同步更新 `index.html` 与 `js/pages/home.js` 中的图片版本；修改首页脚本时更新它在 `index.html` 中的版本。
+覆盖图片慢加载、加载失败、快速移动连续出图、独立节点清理、页面返回与减少动态效果偏好。首页脚本与拖尾图片使用带版本的 URL。更换拖尾图片时，需要同步更新 `index.html` 与 `js/pages/home.js` 中的图片版本；修改首页脚本时更新它在 `index.html` 中的版本。
+
+## 设计画廊维护
+
+正式入口仍是 `design-challenge.html`，首页作品卡片无需改链接。导航复用全站 `.header` 样式和 `js/shared/site-nav.js`，画廊区域随导航实际高度调整；预览使用原生 dialog 覆盖整个窗口。
+
+- 样式：`css/design-challenge.css`，作品宽 250px，16px 平滑圆角；不支持 `corner-shape` 时保留普通圆角。
+- 交互：`js/pages/design-challenge.js`，负责虚拟渲染、拖拽、缩放和 GSAP 展开收起。
+- 几何：`js/pages/design-challenge-geometry.js`，负责循环编号、位置与松手惯性。
+- 资源：复用 `assets/projects/dakafeng/01~50.webp` 与 `assets/vendor/gsap.min.js`；画廊不加载 Lenis。
+
+滚轮跟随保留约 0.13、拖拽跟随约 0.22 的每帧缓动（按 60fps 折算，并适配刷新率）；惯性距离为速度 × 180，单轴上限 650px。
+
+检查循环网格与惯性：
+
+```bash
+node --test tests/design-challenge-geometry.test.cjs
+```
 
 ## 🌐 部署
 
@@ -92,7 +112,7 @@ node --test tests/home-trail.test.cjs
 
 线上地址：[https://houshifang.github.io/shifang/](https://houshifang.github.io/shifang/)。发布结果可在仓库的 Actions 中查看。
 
-项目也可由任意静态托管服务运行，发布目录为根目录。`_headers` 是保留的 Netlify 缓存配置，GitHub Pages 不读取该文件。
+项目也可由任意静态托管服务运行，发布目录为根目录。
 
 > ⚠️ **部署后建议**：把各个 HTML 页面中的 `og:image` 的相对路径换成完整 URL（例如 `https://your-domain.com/assets/site/ico.png`），微信、Twitter 等平台分享才能正确抓取预览图。
 

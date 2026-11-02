@@ -3,76 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#111111">
   <meta name="author" content="仕方 Shifang">
-  <meta name="description" content="50 天设计打卡挑战，每天一份不受规范束缚的自由视觉表达。">
+  <meta name="description" content="50 天设计打卡挑战，在全屏画廊中探索 50 份自由的视觉表达。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="设计打卡挑战 — 仕方">
-  <meta property="og:description" content="50 天设计打卡挑战，每天一份不受规范束缚的自由视觉表达。">
+  <meta property="og:description" content="50 天设计打卡挑战，在全屏画廊中探索 50 份自由的视觉表达。">
   <meta property="og:image" content="./assets/projects/dakafengm.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="设计打卡挑战 — 仕方">
-  <meta name="twitter:description" content="50 天设计打卡挑战，每天一份不受规范束缚的自由视觉表达。">
+  <meta name="twitter:description" content="50 天设计打卡挑战，在全屏画廊中探索 50 份自由的视觉表达。">
   <meta name="twitter:image" content="./assets/projects/dakafengm.webp">
   <meta name="twitter:creator" content="@faaaannng">
   <title>设计打卡挑战 — 仕方</title>
   <link rel="icon" type="image/png" href="./assets/site/ico.png">
   <link rel="stylesheet" href="./css/style.css">
-</head>
-<body class="notes-page dakafeng-page">
-  <div class="container">
-    <header class="header">
-      <div class="header-logo"><a href="index.html">仕方</a></div>
-      <nav class="nav" aria-label="主导航">
-        <a href="index.html#work">作品</a>
-        <a href="https://www.figma.com/proto/aO2AUhVDkXTRNBuerHVk2A/%E4%BE%AF%E4%BB%95%E6%96%B9-%E4%BD%9C%E5%93%81%E9%9B%86?node-id=1-254&amp;viewport=126%2C377%2C0.54&amp;t=DtWwvMKI6NjoDiW0-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1" target="_blank" rel="noopener noreferrer">作品集</a>
-        <a href="resources.html">资源</a>
-        <a href="about.html">关于</a>
-        <a href="about.html#contact">联系</a>
-      </nav>
-      <div class="header-right">
-        <a href="https://x.com/faaaannng" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="header-social">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-          </svg>
-        </a>
-        <span class="header-year">©2026</span>
-      </div>
-    </header>
-
-    <main class="dakafeng-main">
-      <header class="notes-intro">
-        <a class="notes-back" href="index.html" aria-label="返回首页">
-          <svg class="notes-back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 19-7-7 7-7"/>
-            <path d="M19 12H5"/>
-          </svg>
-          <span>Back</span>
-        </a>
-        <h1 class="notes-title">设计打卡挑战</h1>
-        <p class="notes-subtitle">一份不受行业标准和繁琐逻辑束缚的自由创作</p>
-      </header>
-
-      <section class="dakafeng-grid" id="dakafeng-grid" aria-label="设计作品集"></section>
-
-      <footer class="notes-footer">
-        <a class="notes-back" href="index.html" aria-label="返回首页">
-          <svg class="notes-back-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m12 19-7-7 7-7"/>
-            <path d="M19 12H5"/>
-          </svg>
-          <span>Back to home</span>
-        </a>
-      </footer>
-    </main>
-  </div>
-
-  <site-footer></site-footer>
-
-  <script src="./assets/vendor/gsap.min.js"></script>
-  <script src="./assets/vendor/lenis.min.js"></script>
-  <script src="./js/pages/design-challenge.js"></script>
-  <script src="./js/shared/site-footer.js" defer></script>
+  <link rel="stylesheet" href="./css/design-challenge.css?v=20261102-gallery">
+  <script src="./assets/vendor/gsap.min.js" defer></script>
+  <script src="./js/pages/design-challenge-geometry.js?v=20261102-gallery" defer></script>
+  <script src="./js/pages/design-challenge.js?v=20261102-gallery" defer></script>
   <script src="./js/shared/site-nav.js" defer></script>
+</head>
+<body class="design-challenge-page">
+  <header class="header">
+    <div class="header-logo"><a href="index.html">仕方</a></div>
+    <nav class="nav" aria-label="主导航">
+      <a href="index.html#work" aria-current="page">作品</a>
+      <a href="https://www.figma.com/proto/aO2AUhVDkXTRNBuerHVk2A/%E4%BE%AF%E4%BB%95%E6%96%B9-%E4%BD%9C%E5%93%81%E9%9B%86?node-id=1-254&amp;viewport=126%2C377%2C0.54&amp;t=DtWwvMKI6NjoDiW0-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;page-id=0%3A1" target="_blank" rel="noopener noreferrer">作品集</a>
+      <a href="resources.html">资源</a>
+      <a href="about.html">关于</a>
+      <a href="about.html#contact">联系</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://x.com/faaaannng" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="header-social">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+        </svg>
+      </a>
+      <span class="header-year">©2026</span>
+    </div>
+  </header>
+
+  <main id="gallery-viewport" class="gallery-viewport" tabindex="0" aria-label="设计打卡挑战，拖动或滚轮浏览，方向键移动，回车放大作品">
+    <div id="gallery-world" class="gallery-world"></div>
+  </main>
+  <dialog id="gallery-dialog" class="gallery-dialog" aria-label="作品预览，点击或按 Escape 返回，方向键切换">
+    <img id="gallery-image" alt="" draggable="false">
+  </dialog>
 </body>
 </html>
