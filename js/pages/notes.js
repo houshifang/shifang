@@ -58,10 +58,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initSmoothScroll();
 
+  window.initArticleReveal?.(document.querySelector(".notes-main, .quality-main"), [
+    ".notes-list > .note-article",
+    ".quality-showcase",
+    ".quality-section > *",
+    ".quality-article > .quality-final-image",
+  ].join(", "));
+
   if (prefersReducedMotion || !window.gsap) return;
 
-  const intro = document.querySelector(".notes-intro");
-  const articles = gsap.utils.toArray(".note-article");
+  const intro = document.querySelector(".notes-intro, [data-notes-intro]");
 
   if (intro) {
     gsap.from(intro.children, {
@@ -70,18 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: 0.85,
       ease: "power3.out",
       stagger: 0.08,
-    });
-  }
-
-  if (articles.length) {
-    articles.forEach((article, index) => {
-      gsap.from(article, {
-        y: 24,
-        autoAlpha: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        delay: 0.4 + Math.min(index, 4) * 0.06,
-      });
     });
   }
 });

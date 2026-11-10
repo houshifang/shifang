@@ -1,4 +1,8 @@
-window.initPageReveal = (main, selector) => {
+window.initPageReveal = (main, selector, {
+  duration = 0.65,
+  ease = 'power3.out',
+  rootMargin = '0px 0px -24px 0px',
+} = {}) => {
   const { gsap } = window;
   if (!main || !gsap || !('IntersectionObserver' in window)) return;
 
@@ -19,14 +23,14 @@ window.initPageReveal = (main, selector) => {
       gsap.fromTo(entering, { opacity: 0, y: 16 }, {
         opacity: 1,
         y: 0,
-        duration: 0.65,
-        ease: 'power3.out',
+        duration,
+        ease,
         stagger: Math.min(0.05, 0.22 / entering.length),
         clearProps: 'opacity,transform',
       });
     });
 
-    const observer = new IntersectionObserver(reveal, { rootMargin: '0px 0px -24px 0px' });
+    const observer = new IntersectionObserver(reveal, { rootMargin });
     targets.forEach((target) => observer.observe(target));
 
     const showOnFocus = (event) => {
@@ -46,3 +50,9 @@ window.initPageReveal = (main, selector) => {
     };
   });
 };
+
+window.initArticleReveal = (main, selector) => window.initPageReveal(main, selector, {
+  duration: 1,
+  ease: 'power1.out',
+  rootMargin: '0px 0px -200px 0px',
+});

@@ -197,6 +197,7 @@ class SiteFooter extends HTMLElement {
       constraint: { stiffness: 0.16, damping: 0.08, render: { visible: false } },
     });
     mouse.element.removeEventListener("wheel", mouse.mousewheel);
+    mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
     mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
     World.add(engine.world, mouseConstraint);
     this._mouseConstraint = mouseConstraint;

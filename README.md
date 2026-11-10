@@ -4,9 +4,10 @@
 
 ## ✨ 主要内容
 
-- **首页 (`index.html`)** — 个人介绍 + 9 个精选作品集，hero 区域有鼠标拖尾动画
+- **首页 (`index.html`)** — 个人介绍 + 10 个精选作品，hero 区域有鼠标拖尾动画
 - **从工具到服务 (`trust-conversion.html`)** — AI 建站首次付费体验设计复盘
 - **AI 审美进化 (`ai-design-evolution.html`)** — 生成质量实验与落地复盘
+- **团队文化贴纸 (`culture-stickers.html`)** — 八款贴纸、四组字形与文化海报
 - **关于 (`about.html`)** — 履历、技能、联系方式
 - **资源 (`resources.html`)** — 111 个设计与开发收藏，按工具、灵感、学习、行业四类组织，支持多选筛选
 - **随手记 (`notes.html`)** — 关于设计、AI 与生活的零散思考
