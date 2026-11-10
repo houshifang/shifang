@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const initStickyHeader = () => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const initSmoothScroll = () => {
-    if (!window.Lenis || !window.matchMedia("(pointer: fine)").matches) return null;
+    if (prefersReducedMotion || !window.Lenis || !window.matchMedia("(pointer: fine)").matches) return null;
 
     const lenis = new Lenis({
       lerp: 0.075,
@@ -51,51 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return lenis;
   };
 
-  const initIntroAnimation = () => {
-    if (prefersReducedMotion || !window.gsap) return;
-
-    const intro = document.querySelector(".notes-intro");
-    if (!intro) return;
-
-    gsap.from(intro.children, {
-      y: 28,
-      autoAlpha: 0,
-      duration: 0.85,
-      ease: "power3.out",
-      stagger: 0.08,
-    });
-  };
-
-  const initRevealOnScroll = () => {
-    const targets = document.querySelectorAll(
-      ".about-section, .about-contact"
-    );
-    if (!targets.length) return;
-
-    if (prefersReducedMotion || !("IntersectionObserver" in window)) {
-      targets.forEach((el) => el.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      {
-        rootMargin: "0px 0px -10% 0px",
-        threshold: 0.05,
-      }
-    );
-
-    targets.forEach((el) => observer.observe(el));
-  };
-
   initStickyHeader();
   initSmoothScroll();
-  initIntroAnimation();
-  initRevealOnScroll();
-});
+  window.initPageReveal?.(document.querySelector(".about-main"), [
+    ".notes-intro > *",
+    ".about-section-title",
+    ".about-skill",
+    ".about-timeline-item",
+    ".about-creation-intro",
+    ".about-press-item",
+    ".about-social-intro",
+    ".about-social-card",
+    ".about-contact-list",
+    ".about-qr",
+    ".about-footer",
+  ].join(", "));
+})();

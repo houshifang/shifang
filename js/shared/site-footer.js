@@ -4,41 +4,41 @@
  * 用法：在每个页面的 </body> 之前放 <site-footer></site-footer>，
  * 并在 <head> 或 body 末尾引入本脚本即可。
  *
- * 上半部分：基于 Matter.js 的「掉落英文词」物理画布；
- * 下半部分：原有的品牌 / 链接 / 版权信息。
+ * 先引入 trail-images.js，由 Matter.js 模拟文字和拖尾图片的掉落。
  *
  * 物理效果在以下情况会被跳过：
  * - 用户开启了「减少动效」偏好；
- * - 触屏设备宽度过窄（< 480px），避免在小屏占用太多滚动空间；
- * - Matter.js CDN 加载失败时，自动降级为只显示一段静态文案。
+ * - 视口宽度小于 480px，避免在小屏占用太多滚动空间；
+ * - Matter.js CDN 加载失败时，隐藏动画区域。
  */
 
 const MATTER_CDN = "https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js";
 
-// 56 个英文词组成的「自我介绍」，统一字号 + 两种颜色：白色 + 粉色高亮。
-const HIGHLIGHTS = new Set([
-  "SHIFANG.", "UX", "AI", "DESIGNER", "BEIJING", "0→1", "CURSOR", "VIBE",
-]);
-const WORD_TEXTS = [
-  "Hi", "I'm", "SHIFANG.", "a", "UX", "AI", "Product", "DESIGNER",
-  "based", "in", "BEIJING", "with", "experience", "focused", "on", "products",
-  "from", "0→1", "conversational", "interfaces", "generative", "UI",
-  "image", "generation", "currently", "at", "CURSOR", "building", "VIBE",
-  "coding", "workflows", "love", "crafting", "pixels", "exploring", "motion",
-  "shipping", "ideas", "designing", "writing", "notes", "drawing",
-  "inspiration", "art", "music", "interface", "details", "every", "pixel",
-  "matters", "2026", "stay", "curious", "make", "good", "things",
+const WORDS = [
+  "Hi", "I'm", "SHIFANG.", "a", "UX", "AI", "Product", "DESIGNER", "based", "in",
+  "BEIJING", "experience", "products", "0→1", "conversational", "interfaces", "generative", "UI",
+  "image", "generation", "CURSOR", "building", "VIBE", "coding", "workflows", "love",
+  "crafting", "pixels", "exploring", "motion", "ideas", "designing", "writing", "notes",
+  "inspiration", "art", "2026", "stay", "curious", "make", "good", "things",
 ];
-const UNIFORM_SIZE = 36;
-const WORDS = WORD_TEXTS.map((text) => {
-  const highlight = HIGHLIGHTS.has(text);
-  return {
-    text,
-    size: UNIFORM_SIZE,
-    weight: highlight ? 600 : 400,
-    highlight,
-  };
-});
+const PICTURE_WIDTHS = [162, 110, 104, 176, 115, 104, 154, 101, 113, 106, 120, 101, 94, 106];
+
+function loadFooterPicture(src, index) {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.className = "footer-picture";
+    image.alt = "";
+    image.draggable = false;
+    image.onload = () => {
+      const width = PICTURE_WIDTHS[index] ?? 110;
+      image.width = width;
+      image.height = Math.round(width * image.naturalHeight / image.naturalWidth);
+      resolve(image);
+    };
+    image.onerror = () => resolve(null);
+    image.src = src;
+  });
+}
 
 const TEMPLATE = /* html */ `
   <footer class="site-footer" aria-hidden="true">
@@ -99,19 +99,25 @@ class SiteFooter extends HTMLElement {
   }
 
   async _init() {
+    const zone = this.zone;
+    const sources = window.siteTrailImages ?? [];
     let Matter;
+    let pictures;
     try {
-      Matter = await loadMatter();
+      [Matter, pictures] = await Promise.all([
+        loadMatter(),
+        Promise.all(sources.map(loadFooterPicture)),
+      ]);
     } catch (e) {
       console.warn("[site-footer]", e);
-      this.zone.classList.add("is-disabled");
+      zone.classList.add("is-disabled");
       return;
     }
-    if (!this.isConnected) return;
-    this._setupPhysics(Matter);
+    if (!this.isConnected || this.zone !== zone) return;
+    this._setupPhysics(Matter, pictures.filter(Boolean));
   }
 
-  _setupPhysics(Matter) {
+  _setupPhysics(Matter, pictures) {
     const { Engine, World, Bodies, Runner, Mouse, MouseConstraint, Composite, Body } = Matter;
 
     const zone = this.zone;
@@ -125,39 +131,37 @@ class SiteFooter extends HTMLElement {
 
     const wallOpts = { isStatic: true, render: { visible: false } };
     const wallThickness = 80;
+    const ceilingOffset = 420;
     const buildWalls = (w, h) => [
       Bodies.rectangle(w / 2, h + wallThickness / 2 - 2, w * 2, wallThickness, wallOpts),
       Bodies.rectangle(-wallThickness / 2 + 2, h / 2, wallThickness, h * 2, wallOpts),
       Bodies.rectangle(w + wallThickness / 2 - 2, h / 2, wallThickness, h * 2, wallOpts),
-      Bodies.rectangle(w / 2, -wallThickness / 2 - 200, w * 2, wallThickness, wallOpts),
+      Bodies.rectangle(w / 2, -wallThickness / 2 - ceilingOffset, w * 2, wallThickness, wallOpts),
     ];
     let walls = buildWalls(W, H);
     World.add(engine.world, walls);
 
-    // 两遍法：先把所有 span 一次性塞进 DOM，强制一次 layout 后再批量测量、建 body。
+    // 两遍法：先插入全部元素，强制一次 layout 后再批量测量、创建刚体。
     // 这样可以避免在每次 appendChild 后立即读 offsetWidth 触发的 layout 抖动，
     // 保证所有 span 拿到的尺寸都是「最终」尺寸。
     const fragment = document.createDocumentFragment();
-    const spans = WORDS.map((word) => {
+    const pieces = WORDS.map((word) => {
       const span = document.createElement("span");
-      span.className = `word${word.highlight ? " word--bright" : ""}`;
-      span.style.fontSize = `${word.size}px`;
-      span.style.fontWeight = word.weight;
-      span.textContent = word.text;
-      fragment.appendChild(span);
+      span.className = "word";
+      span.textContent = word;
       return span;
     });
+    pieces.push(...pictures);
+    fragment.append(...pieces);
     zone.appendChild(fragment);
     // 强制一次同步 layout，确保后面 getBoundingClientRect 是真实尺寸。
     void zone.offsetHeight;
 
-    const wordBodies = [];
+    const pieceBodies = [];
     let failedCount = 0;
-    for (let i = 0; i < WORDS.length; i++) {
-      const word = WORDS[i];
-      const span = spans[i];
+    for (const [i, elem] of pieces.entries()) {
       try {
-        const rect = span.getBoundingClientRect();
+        const rect = elem.getBoundingClientRect();
         const ww = Math.max(12, Math.round(rect.width) + 4);
         const hh = Math.max(12, Math.round(rect.height) + 2);
 
@@ -176,17 +180,16 @@ class SiteFooter extends HTMLElement {
           render: { visible: false },
         });
 
-        wordBodies.push({ body, elem: span, w: ww, h: hh });
+        pieceBodies.push({ body, elem, w: ww, h: hh });
       } catch (err) {
         failedCount++;
-        console.warn(`[site-footer] #${i} "${word.text}" failed:`, err && err.message);
-        if (span && span.parentNode) span.remove();
+        console.warn(`[site-footer] piece #${i} failed:`, err && err.message);
+        elem.remove();
       }
     }
-    console.info(`[site-footer] ✓ ${wordBodies.length}/${WORDS.length} bodies (failed: ${failedCount})`);
+    console.info(`[site-footer] ✓ ${pieceBodies.length}/${pieces.length} bodies (failed: ${failedCount})`);
 
-    this._wordBodies = wordBodies;
-    World.add(engine.world, wordBodies.map((b) => b.body));
+    World.add(engine.world, pieceBodies.map((b) => b.body));
 
     const mouse = Mouse.create(zone);
     const mouseConstraint = MouseConstraint.create(engine, {
@@ -203,7 +206,7 @@ class SiteFooter extends HTMLElement {
     this._runner = runner;
 
     const sync = () => {
-      for (const wb of wordBodies) {
+      for (const wb of pieceBodies) {
         const { x, y } = wb.body.position;
         wb.elem.style.transform = `translate3d(${x - wb.w / 2}px, ${y - wb.h / 2}px, 0) rotate(${wb.body.angle}rad)`;
       }
@@ -222,7 +225,7 @@ class SiteFooter extends HTMLElement {
       walls = buildWalls(newW, newH);
       World.add(engine.world, walls);
 
-      for (const wb of wordBodies) {
+      for (const wb of pieceBodies) {
         if (wb.body.position.x > newW - wb.w / 2 - 4) {
           Body.setPosition(wb.body, { x: newW - wb.w / 2 - 4, y: wb.body.position.y });
         }
@@ -245,7 +248,7 @@ class SiteFooter extends HTMLElement {
       Runner.stop(runner);
       World.clear(engine.world, false);
       Engine.clear(engine);
-      for (const wb of wordBodies) wb.elem.remove();
+      for (const wb of pieceBodies) wb.elem.remove();
     });
   }
 

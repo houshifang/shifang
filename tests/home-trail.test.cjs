@@ -5,6 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 const source = fs.readFileSync(path.join(__dirname, '../js/pages/home.js'), 'utf8');
+const imageSources = fs.readFileSync(path.join(__dirname, '../js/shared/trail-images.js'), 'utf8');
 const flush = () => new Promise((resolve) => setImmediate(resolve));
 
 function createPage({ reducedMotion = false, supportsDecode = true, readyState = "loading", fireDomReady = true } = {}) {
@@ -92,6 +93,7 @@ function createPage({ reducedMotion = false, supportsDecode = true, readyState =
     },
   };
   window.gsap = gsap;
+  vm.runInNewContext(imageSources, { window });
   let time = 0;
   vm.runInNewContext(source, {
     document, window, gsap, Image: FakeImage,

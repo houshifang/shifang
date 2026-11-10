@@ -48,7 +48,8 @@
 │   └── shared/            # 跨页面共用交互
 │       ├── click-spark.js
 │       ├── site-nav.js
-│       └── site-footer.js
+│       ├── site-footer.js
+│       └── trail-images.js # 首页拖尾与全站页脚共用的图片
 ├── tests/
 │   ├── home-trail.test.cjs # 首页动效回归检查
 │   └── design-challenge-geometry.test.cjs # 画廊几何与惯性检查
@@ -87,7 +88,7 @@ npx serve .
 node --test tests/home-trail.test.cjs
 ```
 
-覆盖图片慢加载、加载失败、快速移动连续出图、独立节点清理、页面返回与减少动态效果偏好。首页脚本与拖尾图片使用带版本的 URL。更换拖尾图片时，需要同步更新 `index.html` 与 `js/pages/home.js` 中的图片版本；修改首页脚本时更新它在 `index.html` 中的版本。
+覆盖图片慢加载、加载失败、快速移动连续出图、独立节点清理、页面返回与减少动态效果偏好。首页脚本与拖尾图片使用带版本的 URL。更换拖尾图片时，在 `js/shared/trail-images.js` 更新地址，前三张同时更新 `index.html` 的预加载链接。修改首页脚本时更新它在 `index.html` 中的版本。
 
 ## 设计画廊维护
 

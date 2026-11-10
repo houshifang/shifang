@@ -1,3 +1,7 @@
+:root {
+  --theme-color: #0863ff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -40,8 +44,8 @@ body {
 }
 
 ::selection {
-  background: #ff9ac8;
-  color: #000000;
+  background: var(--theme-color);
+  color: #ffffff;
 }
 
 .container {
@@ -107,32 +111,24 @@ body {
   display: inline-flex;
   align-items: center;
   min-height: 36px;
-  color: #999999;
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.nav a:hover {
-  color: #ffffff;
-}
-
-.nav a[aria-current] {
-  color: #ffffff;
 }
 
 .nav a[aria-current]::after {
   content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  border-radius: 2px;
-  background: #ff9ac8;
+  left: 50%;
+  bottom: 1px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translateX(-50%);
 }
 
 .nav a:focus-visible {
-  outline: 2px solid #ff9ac8;
+  outline: 2px solid var(--theme-color);
   outline-offset: 5px;
   border-radius: 2px;
 }
@@ -156,9 +152,10 @@ body {
   opacity: 0.7;
 }
 
-.header-social svg {
+.header-social img {
   width: 1.1rem;
   height: 1.1rem;
+  object-fit: contain;
 }
 
 /* Main Content Styles */
@@ -237,7 +234,7 @@ body {
 /* Projects Styles */
 .projects-section {
   min-height: 100vh;
-  padding: 7rem 3rem 6rem;
+  padding: 7rem 3rem 2rem;
   background-color: #000000;
 }
 
@@ -257,7 +254,7 @@ body {
 
 .project-card {
   display: grid;
-  gap: 1.25rem;
+  gap: 0.75rem;
   color: #ffffff;
   text-decoration: none;
 }
@@ -270,7 +267,7 @@ body {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: 1.25rem;
   background-color: #000000;
 }
 
@@ -301,16 +298,6 @@ body {
   font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.12;
-}
-
-.project-info p {
-  max-width: none;
-  margin-top: 0.35rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  letter-spacing: 0em;
-  line-height: 1.6;
-  opacity: 0.72;
 }
 
 .project-card:hover .project-cover img {
@@ -425,7 +412,7 @@ body {
     width: calc(100% - 3rem);
   }
   .projects-section {
-    padding: 5rem 1.5rem 4rem;
+    padding: 5rem 1.5rem 1.5rem;
   }
   .section-title {
     margin-bottom: 3rem;
@@ -433,9 +420,6 @@ body {
   .project-list {
     grid-template-columns: 1fr;
     gap: 4rem;
-  }
-  .project-card {
-    gap: 1.5rem;
   }
   .project-info h3 {
     max-width: 100%;
@@ -446,7 +430,7 @@ body {
    Notes / 随手记 详情页
    ========================================================== */
 .notes-main {
-  padding: 9rem 3rem 7rem;
+  padding: 9rem 3rem 2rem;
 }
 
 .notes-intro {
@@ -587,7 +571,7 @@ body {
 
 @media (max-width: 768px) {
   .notes-main {
-    padding: 7rem 1.5rem 4.5rem;
+    padding: 7rem 1.5rem 1.5rem;
   }
   .notes-intro {
     margin-bottom: 3.25rem;
@@ -613,7 +597,7 @@ body {
 .about-main {
   max-width: 64rem;
   margin: 0 auto;
-  padding: 9rem 3rem 7rem;
+  padding: 9rem 3rem 2rem;
 }
 
 .about-page .notes-intro {
@@ -1086,31 +1070,9 @@ body {
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-/* 进入动画的初始/激活态 */
-.about-section,
-.about-contact {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .about-section,
-  .about-contact {
-    opacity: 0;
-    transform: translateY(20px);
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  .about-section.is-visible,
-  .about-contact.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (max-width: 768px) {
   .about-main {
-    padding: 7rem 1.5rem 4rem;
+    padding: 7rem 1.5rem 1.5rem;
   }
   .about-page .notes-intro {
     margin-bottom: 3.5rem;
@@ -1203,7 +1165,7 @@ body {
   width: 100%;
   max-width: 74rem;
   margin: 0 auto;
-  padding: 9rem 3rem 7rem;
+  padding: 9rem 3rem 2rem;
 }
 
 /* 顶部模块与正文同宽并居中，文字沿用左对齐。 */
@@ -1871,7 +1833,7 @@ body {
 
 @media (max-width: 768px) {
   .quality-main {
-    padding: 7rem 1.5rem 4.5rem;
+    padding: 7rem 1.5rem 1.5rem;
   }
   .quality-page .notes-title {
     font-size: clamp(2.5rem, 12vw, 4.2rem);
@@ -1976,7 +1938,7 @@ body {
 }
 
 /* ============================
-   Site Footer (站点页脚 · 全站通用 · 仅承载文字掉落动画)
+   Site Footer (站点页脚 · 掉落动效)
    ============================ */
 site-footer {
   display: block;
@@ -1989,7 +1951,7 @@ site-footer {
 .site-footer-physics {
   position: relative;
   width: 100%;
-  height: clamp(360px, 50vh, 560px);
+  height: calc(clamp(360px, 50vh, 560px) + 4rem);
   overflow: hidden;
   background: #000;
   cursor: grab;
@@ -2005,30 +1967,35 @@ site-footer {
   display: none;
 }
 
-.site-footer-physics .word {
+.site-footer-physics :is(.word, .footer-picture) {
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.site-footer-physics .word {
   margin: 0;
   padding: 0;
   white-space: nowrap;
-  pointer-events: none;
-  color: rgba(255, 255, 255, 0.88);
+  color: #fff;
   font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 36px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1;
-  will-change: transform;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.site-footer-physics .word--bright {
-  color: #0863ff;
+.site-footer-physics .footer-picture {
+  display: block;
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {
   .site-footer-physics {
-    height: clamp(260px, 38vh, 380px);
+    height: calc(clamp(480px, 1320px - 100vw, 840px) + 2.5rem);
   }
 }

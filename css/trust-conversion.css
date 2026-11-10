@@ -1,5 +1,5 @@
 /* 付费体验项目：复用审美复盘页的长文、摘要与卡片样式。 */
-.trust-page { --trust-accent: #ff9ac8; }
+.trust-page { --trust-accent: var(--theme-color); }
 .trust-page .notes-title { max-width: 12em; }
 .trust-page:not(.payment-preview) .notes-title { max-width: none; font-size: clamp(2.5rem, 5.6vw, 4rem); }
 .trust-page:not(.payment-preview) .notes-intro { margin: 0 auto 3rem; }
@@ -47,7 +47,7 @@
 .trust-flow-figure { margin-top: 2rem; }
 .trust-flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; padding: 1px; background: #292929; border-radius: 0.35rem; overflow: hidden; list-style: none; }
 .trust-flow li { position: relative; padding: 1.5rem 1rem; background: #0b0b0b; color: #ddd; font-size: 0.85rem; text-align: center; }
-.trust-flow .trust-flow-payment { background: #21161b; color: var(--trust-accent); }
+.trust-flow .trust-flow-payment { background: color-mix(in srgb, var(--trust-accent) 10%, #111); color: #fff; }
 .trust-principles { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 1.25rem; }
 .trust-principles .quality-insight-card { padding: 1.5rem; }
 .trust-principles .quality-insight-card p { color: #aaa; }
@@ -56,7 +56,7 @@
 .trust-service-path { width: 100%; min-width: 49rem; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
 .trust-service-path td { position: relative; padding: 1rem 0.75rem; color: #ddd; font-size: var(--trust-size-body); line-height: 1.7; text-align: center; white-space: nowrap; }
 .trust-service-path td + td { border-left: 1px solid var(--trust-panel-border); }
-.trust-service-step { display: block; margin-bottom: 0.35rem; color: var(--trust-accent); font-size: var(--trust-size-caption); font-variant-numeric: tabular-nums; }
+.trust-service-step { display: block; margin-bottom: 0.35rem; color: #fff; font-size: var(--trust-size-caption); font-variant-numeric: tabular-nums; }
 .trust-service-path td:not(:last-child)::after { content: '→'; position: absolute; top: 50%; right: -0.6rem; z-index: 1; width: 1.2rem; transform: translateY(-50%); background: #111; color: #888; font-size: var(--trust-size-caption); line-height: 1.5; }
 .trust-action { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid #242424; }
 .trust-action .trust-subheading { display: flex; align-items: flex-start; gap: 0.65rem; margin-top: 0; }
@@ -77,8 +77,7 @@
 }
 .trust-design-drafts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 1rem; margin-top: 1.5rem; }
 .trust-related-project { margin-top: var(--trust-space-block); color: #bbb; font-size: var(--trust-size-body); line-height: 1.75; }
-.trust-related-project a { color: var(--trust-accent); text-decoration: underline; text-underline-offset: 0.2em; }
-.trust-related-project a:hover { color: #fff; }
+.trust-related-project a { color: #fff; text-decoration: underline; text-underline-offset: 0.2em; }
 .trust-design-drafts figure { min-width: 0; margin: 0; }
 .trust-design-drafts img { display: block; width: 100%; height: auto; border: 1px solid var(--trust-panel-border); border-radius: var(--trust-panel-radius); }
 .trust-design-drafts figcaption { margin-top: 0.65rem; color: #bbb; font-size: var(--trust-size-caption); line-height: 1.8; }
@@ -92,7 +91,7 @@
 .trust-impact-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 2rem; }
 .trust-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .trust-page section[id] { scroll-margin-top: 6rem; }
-.trust-quote { margin: 2rem 0; padding: 0.2rem 0 0.2rem 1.35rem; border-left: 2px solid var(--trust-accent); color: #eee; font-size: 0.95rem; line-height: 1.85; }
+.trust-quote { margin: 2rem 0; padding: 0.2rem 0 0.2rem 1.35rem; border-left: 2px solid #fff; color: #eee; font-size: 0.95rem; line-height: 1.85; }
 .trust-table-wrap { margin-top: 2rem; border: 1px solid #292929; border-radius: 0.35rem; overflow: hidden; }
 .trust-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.8rem; line-height: 1.8; }
 .trust-table caption { padding: 1rem 1.25rem; text-align: left; color: #b3b3b3; background: #0b0b0b; font-size: 0.72rem; }
@@ -126,6 +125,7 @@
   --trust-space-heading: 0.75rem;
   --trust-space-block: 1.5rem;
   --trust-space-group: 2rem;
+  --trust-space-subsection: 3.5rem;
   --trust-space-section: 3rem;
 }
 
@@ -229,7 +229,7 @@
 .trust-page:not(.payment-preview) #challenge .trust-challenge-evidence > figure { margin: 0; }
 .trust-page:not(.payment-preview) #challenge .trust-flow li { padding-top: 1.25rem; padding-bottom: 1.25rem; }
 .trust-page:not(.payment-preview) #challenge .trust-caption { margin-top: 0.75rem; }
-.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion { margin-top: var(--trust-space-group); padding-top: var(--trust-space-block); }
+.trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion { padding-top: var(--trust-space-block); }
 .trust-page:not(.payment-preview) #challenge .trust-challenge-conclusion h3 { margin-top: 0; margin-bottom: var(--trust-space-heading); }
 
 /* 旧流程的静态模拟聊天；付款样式仅为预览内容。 */
@@ -309,17 +309,18 @@
 
 /* 全页阅读节奏：段落 12px、标题下 12px、内容块 24px、分组 32px。
    以同一组变量控制，避免长文默认样式与局部规则各自叠加留白。 */
-.trust-page:not(.payment-preview) .quality-section.note-article { padding-block: var(--trust-space-section); }
+.trust-page:not(.payment-preview) .quality-section.note-article { padding-block: calc(var(--trust-space-section) * 2.25); }
 .trust-page:not(.payment-preview) .quality-kicker { margin-bottom: 0.5rem; }
 .trust-page:not(.payment-preview) .note-article-title { margin-bottom: 1.25rem; }
 .trust-page:not(.payment-preview) .note-article-body { line-height: 1.75; }
 .trust-page:not(.payment-preview) .note-article-body > p { margin: 0; }
 .trust-page:not(.payment-preview) .note-article-body > p + p { margin-top: var(--trust-space-paragraph); }
-.trust-page:not(.payment-preview) .note-article-body > h3 { margin: var(--trust-space-group) 0 var(--trust-space-heading); line-height: 1.5; }
+.trust-page:not(.payment-preview) .note-article-body > h3 { margin: var(--trust-space-subsection) 0 var(--trust-space-heading); line-height: 1.5; }
 .trust-page:not(.payment-preview) .note-article-body > h3:first-child { margin-top: 0; }
 .trust-page:not(.payment-preview) .quality-section > :not(.note-article-title) + .note-article-body { margin-top: var(--trust-space-group); }
-.trust-page:not(.payment-preview) .trust-subheading { margin: var(--trust-space-group) 0 var(--trust-space-heading); line-height: 1.5; }
-.trust-page:not(.payment-preview) .trust-roadmap-section { margin-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) .quality-section > :not(.note-article-title) + .note-article-body:has(> h3:first-child) { margin-top: var(--trust-space-subsection); }
+.trust-page:not(.payment-preview) .trust-subheading { margin: var(--trust-space-subsection) 0 var(--trust-space-heading); line-height: 1.5; }
+.trust-page:not(.payment-preview) .trust-roadmap-section { margin-top: var(--trust-space-subsection); }
 .trust-page:not(.payment-preview) .trust-roadmap-section > .trust-subheading { margin-top: 0; }
 .trust-page:not(.payment-preview) :is(.quality-summary, .trust-table-wrap, .trust-service-path-wrap, .trust-impact-stats, .trust-validation) { margin-top: var(--trust-space-block); }
 .trust-page:not(.payment-preview) .note-article-title + :is(.quality-summary, .trust-impact-stats, .trust-validation) { margin-top: 0; }
@@ -327,7 +328,7 @@
 .trust-page:not(.payment-preview) .trust-research-gallery { margin-top: var(--trust-space-heading); }
 .trust-page:not(.payment-preview) .trust-principles--detailed { margin-top: var(--trust-space-block); }
 .trust-page:not(.payment-preview) .trust-research-patterns { margin-top: var(--trust-space-block); }
-.trust-page:not(.payment-preview) .trust-action { margin-top: var(--trust-space-group); padding-top: var(--trust-space-group); }
+.trust-page:not(.payment-preview) .trust-action { margin-top: var(--trust-space-subsection); padding-top: var(--trust-space-group); }
 .trust-page:not(.payment-preview) .trust-action > .trust-subheading { margin: 0 0 var(--trust-space-heading); }
 .trust-page:not(.payment-preview) .trust-action-problem { margin-top: var(--trust-space-paragraph); line-height: 1.75; }
 .trust-page:not(.payment-preview) :is(.trust-solution-figure, .trust-design-drafts) { margin-top: var(--trust-space-block); }
@@ -346,6 +347,7 @@
     --trust-space-heading: 0.625rem;
     --trust-space-block: 1.25rem;
     --trust-space-group: 1.75rem;
+    --trust-space-subsection: 3rem;
     --trust-space-section: 2.5rem;
   }
 }

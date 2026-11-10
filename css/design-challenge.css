@@ -27,7 +27,7 @@ html, body {
 
 .design-challenge-page .header-logo a:focus-visible,
 .design-challenge-page .header-social:focus-visible {
-  outline: 2px solid #ff9ac8;
+  outline: 2px solid var(--theme-color);
   outline-offset: 5px;
 }
 

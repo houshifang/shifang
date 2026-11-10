@@ -62,6 +62,9 @@
   window.addEventListener('pageshow', update);
   update();
 
+  window.initPageReveal?.(document.querySelector('.resources-main'),
+    '.resources-intro > *, .resources-section-heading, .resources-controls, .resource-link');
+
   const header = document.querySelector('.header');
   const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 80);
   window.addEventListener('scroll', updateHeader, { passive: true });

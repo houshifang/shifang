@@ -1,4 +1,4 @@
-.resources-main { max-width: 64rem; margin: 0 auto; padding: 9rem 3rem 5rem; }
+.resources-main { max-width: 64rem; margin: 0 auto; padding: 9rem 3rem 2rem; }
 .resources-intro { margin-bottom: 4rem; }
 .resources-intro h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.2; letter-spacing: -0.04em; }
 .resources-subtitle { margin-top: 1rem; color: #ccc; font-size: 1rem; line-height: 1.7; }
@@ -35,7 +35,7 @@
 .resource-link time { flex-shrink: 0; color: #909095; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 0.8125rem; font-variant-numeric: tabular-nums; line-height: 1.6; white-space: nowrap; transition: color 0.3s ease; }
 .resource-link:hover .resource-description, .resource-link:hover time { color: #bbb; }
 .resource-link:hover .resource-leader { border-color: #555; }
-.resources-page :is(a, button):focus-visible { outline: 2px solid #ff9ac8; outline-offset: 4px; }
+.resources-page :is(a, button):focus-visible { outline: 2px solid var(--theme-color); outline-offset: 4px; }
 .resources-empty { padding: 4rem 1rem; text-align: center; }
 .resources-empty h3 { margin-bottom: 0.75rem; font-size: 1rem; font-weight: 500; }
 .resources-empty p { margin-bottom: 1.25rem; color: #999; font-size: 0.875rem; }
@@ -44,7 +44,7 @@
   .resource-item, .resource-description, .resource-leader, .resource-link time, .resources-controls button, .resources-empty button { transition: none; }
 }
 @media (max-width: 768px) {
-  .resources-main { padding: 7rem 1.5rem 3rem; }
+  .resources-main { padding: 7rem 1.5rem 1.5rem; }
   .resources-intro { margin-bottom: 2.5rem; }
   .resources-filters { flex: 1 1 100%; }
   .resources-controls button { min-height: 2.75rem; }
